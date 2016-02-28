@@ -12,7 +12,6 @@ namespace HardTrainingLogger_Tests.ViewModel
     {
         private ProfileManagerViewModel sut;    //System Under Tests
         private Mock<ILoggerRepo> mockLoggerRepo;
-        private Mock<ProfileOperationsAssistant> mockOperationsAssistantView;
             
         [SetUp]
         public void SetUp()
@@ -20,8 +19,6 @@ namespace HardTrainingLogger_Tests.ViewModel
             this.mockLoggerRepo = new Mock<ILoggerRepo>();
 
             this.sut = new ProfileManagerViewModel(mockLoggerRepo.Object);
-
-            this.mockOperationsAssistantView = new Mock<ProfileOperationsAssistant>(MockBehavior.Loose, true);
         }
 
         [Test]
