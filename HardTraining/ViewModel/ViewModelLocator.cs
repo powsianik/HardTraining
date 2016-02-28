@@ -64,7 +64,7 @@ namespace HardTraining.ViewModel
             // TODO Clear the ViewModels
         }
 
-        public void OpenFirstWindow()
+        private void OpenFirstWindow()
         {
             var logger = this.Logger;
             Messenger.Default.Send<OpenWindowMessage>(new OpenWindowMessage(typeof(LoggerView)));

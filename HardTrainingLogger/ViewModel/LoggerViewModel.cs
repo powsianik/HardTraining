@@ -27,24 +27,23 @@ namespace HardTrainingLogger.ViewModel
             this._repo = repo;
 
             this.OpenProfileManagerCommand = new RelayCommand(this.OpenProfileManager);
-            this.LogOnCommand = new RelayCommand(this.LogOns);
+            this.LogOnCommand = new RelayCommand(this.LogOn);
         }
 
         public ICommand OpenProfileManagerCommand { get; private set; }
         public ICommand LogOnCommand { get; private set; }
 
+        public string ProfileName { get; set; }
+        public string ProfilePass { get; set; }
+
         public string Name => "Logger";
 
-
-        public void LogOns()
+        public void LogOn()
         {
-
-            //return this._repo.IsExistProfile(login, password);
-        }
-
-        public bool LogOn(string s, string v)
-        {
-            return this._repo.IsExistProfile(s, v);
+            if (this._repo.IsExistProfile(ProfileName, ProfilePass))
+            {
+                
+            }
         }
 
         private void OpenLoggerView(OpenWindowMessage msg)

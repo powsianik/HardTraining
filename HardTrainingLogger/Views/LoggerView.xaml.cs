@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using HardTrainingLogger.ViewModel;
 
 namespace HardTrainingLogger.Views
 {
@@ -10,6 +12,12 @@ namespace HardTrainingLogger.Views
         public LoggerView()
         {
             InitializeComponent();
+        }
+
+        private void BtnLogInClicked(object sender, EventArgs e)
+        {
+            var mv = this.DataContext as LoggerViewModel;
+            mv.ProfilePass = this.pbxPassword.Password;
         }
     }
 }

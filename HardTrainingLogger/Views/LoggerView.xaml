@@ -24,15 +24,15 @@
             <Label Content="Logger"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
                 <Label Content="{DynamicResource Username}"></Label>
-                <TextBox Margin="17,0,0,0" Width="200" />
+                <TextBox Margin="17,0,0,0" Width="200" Text="{Binding ProfileName}" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="2">
                 <Label Content="{DynamicResource Password}"></Label>
-                <PasswordBox Margin="20,0,0,0" Width="200"></PasswordBox>
+                <PasswordBox x:Name="pbxPassword" Margin="20,0,0,0" Width="200"></PasswordBox>
             </StackPanel>
         </StackPanel>
 
         <Button Grid.Row="2" Margin="1,0,0,0" Command="{Binding OpenProfileManagerCommand}">Profile manager</Button>
-        <Button Grid.Row="2" Margin="1,0,0,0" Grid.Column="1" Command="{Binding LogOnCommand}" >Log in</Button>
+        <Button Grid.Row="2" Margin="1,0,0,0" Grid.Column="1" Command="{Binding LogOnCommand}" Click="BtnLogInClicked" >Log in</Button>
     </Grid>
 </Window>
