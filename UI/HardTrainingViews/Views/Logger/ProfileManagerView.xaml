@@ -1,0 +1,54 @@
+﻿<Window x:Class="HardTraining.Views.Logger.ProfileManagerView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:conv="clr-namespace:HardTrainingCore.Converters;assembly=HardTrainingCore"
+        xmlns:userControls="clr-namespace:HardTraining.Views.Logger.UserControls"
+        mc:Ignorable="d"
+        Title="ProfileManagerView" Height="600" Width="800"
+        DataContext="{Binding Source={StaticResource Locator}, Path=ProfileManager}">
+
+    <Window.Resources>
+        <conv:BoolToVisibilityConverter x:Key="visibilityConverter" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <ListView Name="LvProfiles" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Profiles}" SelectionChanged="LvProfilesSelectionChanged" SelectedItem="{Binding SelectedProfile, Mode=OneWayToSource}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding Id}"></TextBlock>
+                        <TextBlock Grid.Column="1" Text="{Binding Name}"></TextBlock>
+                        <TextBlock Grid.Column="2" Text="{Binding CreationDate}"></TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Column="1" Width="auto" Height="80" VerticalAlignment="Top" Command="{Binding ShowAssistantAndSetActionCommand}" CommandParameter="Create">Create profile</Button>
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0,150,0,0">
+            <Button Name="BtnDeleteProfile" Height="80" Visibility="Hidden" Command="{Binding ShowAssistantAndSetActionCommand}" CommandParameter="Delete" >Delete profile</Button>
+        </StackPanel>
+
+        <userControls:ProfileOperationsAssistant x:Name="Assistant" Visibility="{Binding IsAssistantVisisble, Converter={StaticResource visibilityConverter}}" Grid.Row="1" Margin="82,0,82,10" Width="Auto"
+                                             CommandWhenConfirm="{Binding ToExecuteCommand}"/>
+                                             
+
+    </Grid>
+</Window>
