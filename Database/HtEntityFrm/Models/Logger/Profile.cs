@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace HardTrainingRepository.Models.Logger
+namespace EntityFrameworkDomain.Models.Logger
 {
     public class Profile
     {

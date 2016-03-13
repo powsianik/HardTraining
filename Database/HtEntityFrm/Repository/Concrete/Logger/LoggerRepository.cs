@@ -1,10 +1,10 @@
 ﻿using System.Data.Entity;
 using System.Linq;
-using HardTrainingRepository.Models.Context;
-using HardTrainingRepository.Models.Logger;
-using HardTrainingRepository.Repository.Interfaces.Logger;
+using EntityFrameworkDomain.Models.Context;
+using EntityFrameworkDomain.Models.Logger;
+using EntityFrameworkDomain.Repository.Interfaces.Logger;
 
-namespace HardTrainingRepository.Repository.Concrete.Logger
+namespace EntityFrameworkDomain.Repository.Concrete.Logger
 {
     public class LoggerRepository : ILoggerRepo
     {

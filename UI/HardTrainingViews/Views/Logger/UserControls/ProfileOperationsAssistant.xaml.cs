@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace HardTraining.Views.Logger.UserControls
+namespace HardTrainingViews.Views.Logger.UserControls
 {
     /// <summary>
     /// Interaction logic for ProfileOperationsAssistant.xaml

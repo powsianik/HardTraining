@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HardTrainingRepository.Repository.Concrete.Exceptions
+namespace EntityFrameworkDomain.Repository.Concrete.Exceptions
 {
     public class LoginOrPasswordIncorrectException : Exception
     { 

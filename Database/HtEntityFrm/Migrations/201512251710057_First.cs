@@ -1,8 +1,7 @@
-namespace HardTrainingRepository.Migrations
+using System.Data.Entity.Migrations;
+
+namespace EntityFrameworkDomain.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class First : DbMigration
     {
         public override void Up()

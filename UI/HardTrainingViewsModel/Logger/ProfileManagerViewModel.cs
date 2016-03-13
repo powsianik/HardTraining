@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using EntityFrameworkDomain.Models.Logger;
+using EntityFrameworkDomain.Repository.Interfaces.Logger;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
-using HardTrainingRepository.Models.Logger;
-using HardTrainingRepository.Repository;
-using HardTrainingRepository.Repository.Interfaces.Logger;
-using HardTrainingServiceInterfaces.Logger;
-
 
 namespace HardTrainingViewsModel.Logger
 {
@@ -20,8 +17,8 @@ namespace HardTrainingViewsModel.Logger
 
         public ProfileManagerViewModel(ILoggerRepo repo)
         {
-
             this._repo = repo;
+            this._profiles = new ObservableCollection<Profile>(this._repo.GetProfiles());
 
             this.CreateProfileCommand = new RelayCommand<Profile>(this.CreateProfile);
             this.DeleteProfileCommand = new RelayCommand<Profile>(this.DeleteProfile);
@@ -82,6 +79,8 @@ namespace HardTrainingViewsModel.Logger
                 Password = this.ProfilePassword
             };
 
+            this._repo.AddProfile(newProfile);
+            this._repo.SaveChanges();
 
             this.Profiles.Add(newProfile);
 

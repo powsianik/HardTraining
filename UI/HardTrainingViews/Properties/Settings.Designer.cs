@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HardTraining.Properties {
+namespace HardTrainingViews.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

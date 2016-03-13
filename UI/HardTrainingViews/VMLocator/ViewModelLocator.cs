@@ -14,14 +14,14 @@
 
 using System;
 using GalaSoft.MvvmLight.Messaging;
-using HardTraining.Views.Logger;
 using HardTrainingCore.Messages;
+using HardTrainingViews.Views.Logger;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 
-namespace HardTraining.VMLocator
+namespace HardTrainingViews.VMLocator
 {
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -38,8 +38,6 @@ namespace HardTraining.VMLocator
         {
             this.iocConfig = new IocContainerConfig();
             ServiceLocator.SetLocatorProvider(() => new UnityServiceLocator(this.iocConfig.GetPreparingContainer()));
-
-            this.OpenFirstWindow();
         }
 
         public LoggerViewModel Logger => ServiceLocator.Current.GetInstance<LoggerViewModel>();
@@ -51,15 +49,6 @@ namespace HardTraining.VMLocator
         public static void Cleanup()
         {
             // TODO Clear the ViewModels
-        }
-
-        private void OpenFirstWindow()
-        {   
-            NLog.Logger log = NLog.LogManager.GetCurrentClassLogger();
-            log.Trace("OpenFirstWindow was called.");
-
-            var logger = this.Logger;
-            Messenger.Default.Send<OpenWindowMessage>(new OpenWindowMessage(typeof(LoggerView)));
         }
 
         public void Dispose()

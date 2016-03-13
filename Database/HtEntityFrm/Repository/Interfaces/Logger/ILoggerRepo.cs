@@ -1,7 +1,7 @@
 ﻿using System.Linq;
-using HardTrainingRepository.Models.Logger;
+using EntityFrameworkDomain.Models.Logger;
 
-namespace HardTrainingRepository.Repository.Interfaces.Logger
+namespace EntityFrameworkDomain.Repository.Interfaces.Logger
 {
     public interface ILoggerRepo
     {

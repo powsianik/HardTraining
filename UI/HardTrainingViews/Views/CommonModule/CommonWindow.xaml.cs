@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using HardTraining.VMLocator;
+using HardTrainingViews.VMLocator;
 
-namespace HardTraining.Views.CommonModule
+namespace HardTrainingViews.Views.CommonModule
 {
     /// <summary>
     /// Interaction logic for CommonWindow.xaml

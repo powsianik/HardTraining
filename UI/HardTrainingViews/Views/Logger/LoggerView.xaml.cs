@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Windows;
+using GalaSoft.MvvmLight.Messaging;
+using HardTrainingCore.Messages;
+using HardTrainingViews.VMLocator;
 using HardTrainingViewsModel.Logger;
 
-namespace HardTraining.Views.Logger
+namespace HardTrainingViews.Views.Logger
 {
     /// <summary>
     /// Interaction logic for LoggerView.xaml
@@ -12,12 +15,24 @@ namespace HardTraining.Views.Logger
         public LoggerView()
         {
             InitializeComponent();
+            Closing += (s, e) => ViewModelLocator.Cleanup();
+
+            Messenger.Default.Register<OpenViewMessage>(this, this.OpenView);
         }
 
         private void BtnLogInClicked(object sender, EventArgs e)
         {
             var mv = this.DataContext as LoggerViewModel;
             mv.ProfilePass = this.pbxPassword.Password;
+        }
+
+        private void OpenView(OpenViewMessage msg)
+        {
+            if (msg.TypeOfViewToOpen == TypesOfViews.ProfileManager)
+            {
+                var view = new ProfileManagerView();
+                view.Show();
+            }
         }
     }
 }

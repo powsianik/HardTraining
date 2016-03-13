@@ -5,6 +5,8 @@ using GalaSoft.MvvmLight.Command;
 using HardTrainingServices.Logger;
 
 using System.Windows;
+using HardTrainingCore.Messages;
+using Microsoft.Practices.ServiceLocation;
 
 namespace HardTrainingViewsModel.Logger
 {
@@ -20,7 +22,6 @@ namespace HardTrainingViewsModel.Logger
        
         public LoggerViewModel(ProfileChecker profileChecker)
         {
-            MessengerInstance.Register<HardTrainingCore.Messages.OpenWindowMessage>(this, this.OpenLoggerView);
             this.profileChecker = profileChecker;
 
             this.OpenProfileManagerCommand = new RelayCommand(this.OpenProfileManager);
@@ -43,28 +44,9 @@ namespace HardTrainingViewsModel.Logger
             }
         }
 
-        private void OpenLoggerView(HardTrainingCore.Messages.OpenWindowMessage msg)
-        {
-            
-            Type windowType = msg.TypeOfWindowToOpen;
-            var window = Activator.CreateInstance(windowType) as Window;
-
-            if (window != null)
-            {
-                window.DataContext = this;
-                window.Show();
-            }
-            else
-            {
-                
-            }
-        }
-
         private void OpenProfileManager()
         {
-            /*
-            ProfileManagerView profileManagerView = new ProfileManagerView();
-            profileManagerView.Show();*/
+            MessengerInstance.Send(new OpenViewMessage(TypesOfViews.ProfileManager));
         }
     }
 }
