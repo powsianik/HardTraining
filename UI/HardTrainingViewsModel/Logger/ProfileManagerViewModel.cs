@@ -6,21 +6,25 @@ using EntityFrameworkDomain.Repository.Interfaces.Logger;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 
+using HardTrainingServices.Logger;
+
 namespace HardTrainingViewsModel.Logger
 {
     public class ProfileManagerViewModel : ViewModelBase
     {
-        private readonly ILoggerRepo _repo;
+        private  ILoggerRepo _repo;
+        private  SimpleProfileCreator profileCreator;
         private ObservableCollection<Profile> _profiles;
         private bool _isAssistantVisisble;
         private ICommand _toExecuteCommand;
 
-        public ProfileManagerViewModel(ILoggerRepo repo)
+        public ProfileManagerViewModel(ILoggerRepo repo, SimpleProfileCreator profileCreator)
         {
             this._repo = repo;
+            this.profileCreator = profileCreator;
             this._profiles = new ObservableCollection<Profile>(this._repo.GetProfiles());
 
-            this.CreateProfileCommand = new RelayCommand<Profile>(this.CreateProfile);
+            this.CreateProfileCommand = new RelayCommand(this.CreateProfile);
             this.DeleteProfileCommand = new RelayCommand<Profile>(this.DeleteProfile);
             this.ShowAssistantAndSetActionCommand = new RelayCommand<string>(this.ShowAssistantAndSetSpecificAction);
 
@@ -70,19 +74,21 @@ namespace HardTrainingViewsModel.Logger
             }
         }
 
-        private void CreateProfile(Profile profile)
+        private void CreateProfile()
         {
+            this.profileCreator.CreateProfile(this.ProfileName, this.ProfilePassword);
+            /*
             Profile newProfile = new Profile()
             {
                 CreationDate = DateTime.Now,
                 Name = this.ProfileName,
                 Password = this.ProfilePassword
             };
+            */
+            //this._repo.AddProfile(newProfile);
+            //this._repo.SaveChanges();
 
-            this._repo.AddProfile(newProfile);
-            this._repo.SaveChanges();
-
-            this.Profiles.Add(newProfile);
+            //this.Profiles.Add(newProfile);
 
             this.RaisePropertyChanged(() => Profiles);
 
@@ -111,7 +117,7 @@ namespace HardTrainingViewsModel.Logger
             {
                 case "Create":
                 {
-                    this.ToExecuteCommand = new RelayCommand<Profile>(this.CreateProfile);
+                    this.ToExecuteCommand = new RelayCommand(this.CreateProfile);
                     break;
                 }
 

@@ -1,6 +1,9 @@
 ﻿using System;
 using EntityFrameworkDomain.Models.Context;
 using EntityFrameworkDomain.Models.Context.Concrete;
+using EntityFrameworkDomain.Models.Logger;
+using EntityFrameworkDomain.Repository;
+using EntityFrameworkDomain.Repository.Concrete;
 using EntityFrameworkDomain.Repository.Concrete.Logger;
 using EntityFrameworkDomain.Repository.Interfaces.Logger;
 using HardTrainingServices.Logger;
@@ -25,9 +28,12 @@ namespace HardTrainingViews
             this.iocContainer.RegisterType<ILoggerRepo, LoggerRepository>(new PerResolveLifetimeManager());
 
             this.iocContainer.RegisterType<ProfileChecker>();
-
             this.iocContainer.RegisterType<LoggerViewModel>();
+
+            this.iocContainer.RegisterType<ICreate<Profile>, EntityCreator<Profile>>(new InjectionConstructor(new LoggerContext()));
+            this.iocContainer.RegisterType<SimpleProfileCreator>();
             this.iocContainer.RegisterType<ProfileManagerViewModel>();
+
             this.iocContainer.RegisterType<CommonModuleViewModel>();
         }
 
