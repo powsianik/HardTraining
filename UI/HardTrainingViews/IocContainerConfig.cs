@@ -30,8 +30,10 @@ namespace HardTrainingViews
             this.iocContainer.RegisterType<ProfileChecker>();
             this.iocContainer.RegisterType<LoggerViewModel>();
 
-            this.iocContainer.RegisterType<ICreate<Profile>, EntityCreator<Profile>>(new InjectionConstructor(new LoggerContext()));
+            this.iocContainer.RegisterType<ICreate<Profile>, EntityCreator<Profile>>(new InjectionConstructor(this.iocContainer.Resolve<ILoggerContext>()));
             this.iocContainer.RegisterType<SimpleProfileCreator>();
+            this.iocContainer.RegisterType<IDelete<Profile>, EntityDeleter<Profile>>(new InjectionConstructor(this.iocContainer.Resolve<ILoggerContext>()));
+            this.iocContainer.RegisterType<SimpleProfileDeleter>();
             this.iocContainer.RegisterType<ProfileManagerViewModel>();
 
             this.iocContainer.RegisterType<CommonModuleViewModel>();

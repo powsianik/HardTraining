@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logger\ProfileController.cs" />
+    <Compile Include="Logger\ProfileFinder.cs" />
     <Compile Include="Logger\SimpleProfileCreator.cs" />
     <Compile Include="Logger\ProfileChecker.cs" />
+    <Compile Include="Logger\SimpleProfileDeleter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

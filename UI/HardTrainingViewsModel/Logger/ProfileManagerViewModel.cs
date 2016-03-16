@@ -14,14 +14,16 @@ namespace HardTrainingViewsModel.Logger
     {
         private  ILoggerRepo _repo;
         private  SimpleProfileCreator profileCreator;
+        private SimpleProfileDeleter profileDeleter;
         private ObservableCollection<Profile> _profiles;
         private bool _isAssistantVisisble;
         private ICommand _toExecuteCommand;
 
-        public ProfileManagerViewModel(ILoggerRepo repo, SimpleProfileCreator profileCreator)
+        public ProfileManagerViewModel(ILoggerRepo repo, SimpleProfileCreator profileCreator, SimpleProfileDeleter profileDeleter)
         {
             this._repo = repo;
             this.profileCreator = profileCreator;
+            this.profileDeleter = profileDeleter;
             this._profiles = new ObservableCollection<Profile>(this._repo.GetProfiles());
 
             this.CreateProfileCommand = new RelayCommand(this.CreateProfile);
@@ -99,8 +101,9 @@ namespace HardTrainingViewsModel.Logger
         {
             if (this.CheckAreProvidedDataAndSelectedDataCorrect())
             {
-                this._repo.DeleteProfile(this.SelectedProfile);
-                this._repo.SaveChanges();
+                this.profileDeleter.Delete(this.SelectedProfile.Name, this.SelectedProfile.Password);
+                //this._repo.DeleteProfile(this.SelectedProfile);
+                //this._repo.SaveChanges();
                 this.Profiles.Remove(this.SelectedProfile);
 
                 this.RaisePropertyChanged(() => Profiles);

@@ -88,13 +88,15 @@
     <Compile Include="Models\Context\ILoggerContext.cs" />
     <Compile Include="Models\Logger\Profile.cs" />
     <Compile Include="Repository\Concrete\EntityCreator.cs" />
-    <Compile Include="Repository\Concrete\EntityFrmChangeSaver.cs" />
+    <Compile Include="Repository\Concrete\EntityDeleter.cs" />
+    <Compile Include="Repository\Concrete\EntityReader.cs" />
     <Compile Include="Repository\Concrete\Exceptions\LoginOrPasswordIncorrectException.cs" />
     <Compile Include="Repository\Concrete\Logger\LoggerRepository.cs" />
     <Compile Include="Repository\ICreate.cs" />
+    <Compile Include="Repository\IDelete.cs" />
     <Compile Include="Repository\Interfaces\IGenericRepo.cs" />
     <Compile Include="Repository\Interfaces\Logger\ILoggerRepo.cs" />
-    <Compile Include="Repository\ISaver.cs" />
+    <Compile Include="Repository\IReadAll.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using HardTrainingServices.Logger;
-
-using System.Windows;
 using HardTrainingCore.Messages;
-using Microsoft.Practices.ServiceLocation;
+
 
 namespace HardTrainingViewsModel.Logger
 {
