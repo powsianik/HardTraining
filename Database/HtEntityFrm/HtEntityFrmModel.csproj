@@ -90,6 +90,7 @@
     <Compile Include="Repository\Concrete\EntityCreator.cs" />
     <Compile Include="Repository\Concrete\EntityDeleter.cs" />
     <Compile Include="Repository\Concrete\EntityReader.cs" />
+    <Compile Include="Repository\Concrete\EntityUpdater.cs" />
     <Compile Include="Repository\Concrete\Exceptions\LoginOrPasswordIncorrectException.cs" />
     <Compile Include="Repository\Concrete\Logger\LoggerRepository.cs" />
     <Compile Include="Repository\ICreate.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Repository\Interfaces\IGenericRepo.cs" />
     <Compile Include="Repository\Interfaces\Logger\ILoggerRepo.cs" />
     <Compile Include="Repository\IReadAll.cs" />
+    <Compile Include="Repository\IUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">

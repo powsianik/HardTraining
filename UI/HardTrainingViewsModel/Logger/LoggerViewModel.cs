@@ -37,7 +37,7 @@ namespace HardTrainingViewsModel.Logger
         {
             if (this.profileChecker.IsExistProfile(ProfileName, ProfilePass))
             {
-                
+                MessengerInstance.Send(new OpenViewMessage(TypesOfViews.CommonViewModule));
             }
         }
 

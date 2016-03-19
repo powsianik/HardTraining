@@ -2,6 +2,7 @@
 using System.Windows;
 using GalaSoft.MvvmLight.Messaging;
 using HardTrainingCore.Messages;
+using HardTrainingViews.Views.CommonModule;
 using HardTrainingViews.VMLocator;
 using HardTrainingViewsModel.Logger;
 
@@ -32,6 +33,13 @@ namespace HardTrainingViews.Views.Logger
             {
                 var view = new ProfileManagerView();
                 view.Show();
+            }
+            else if (msg.TypeOfViewToOpen == TypesOfViews.CommonViewModule)
+            {
+                var view = new CommonWindow();
+                view.Show();
+
+                this.Close();
             }
         }
     }

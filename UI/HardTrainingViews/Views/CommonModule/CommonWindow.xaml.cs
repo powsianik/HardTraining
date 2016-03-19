@@ -1,5 +1,8 @@
 ﻿using System.Windows;
+using GalaSoft.MvvmLight.Messaging;
 using HardTrainingViews.VMLocator;
+using HardTrainingCore.Messages;
+using HardTrainingViews.Views.Logger;
 
 namespace HardTrainingViews.Views.CommonModule
 {

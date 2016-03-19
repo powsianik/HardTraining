@@ -13,7 +13,7 @@ namespace HardTrainingViewsModel.Logger
     public class ProfileManagerViewModel : ViewModelBase
     {
         private  ILoggerRepo _repo;
-        private  SimpleProfileCreator profileCreator;
+        private SimpleProfileCreator profileCreator;
         private SimpleProfileDeleter profileDeleter;
         private ObservableCollection<Profile> _profiles;
         private bool _isAssistantVisisble;
@@ -92,8 +92,7 @@ namespace HardTrainingViewsModel.Logger
 
             //this.Profiles.Add(newProfile);
 
-            this.RaisePropertyChanged(() => Profiles);
-
+            this.RaisePropertyChanged(() => Profiles);     
             this.IsAssistantVisisble = false;
         }
 

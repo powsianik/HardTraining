@@ -3,6 +3,7 @@
     public enum TypesOfViews
     {
         Logger,
-        ProfileManager
+        ProfileManager,
+        CommonViewModule
     }
 }
