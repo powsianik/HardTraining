@@ -52,6 +52,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Database\HardTrainingPoco\HardTrainingPoco.csproj">
+      <Project>{49e96329-f639-441f-b325-1e2c5f6a262a}</Project>
+      <Name>HardTrainingPoco</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Database\HtEntityFrm\HtEntityFrmModel.csproj">
       <Project>{ffb9bc14-9cf3-4821-a63b-13b519a60893}</Project>
       <Name>HtEntityFrmModel</Name>

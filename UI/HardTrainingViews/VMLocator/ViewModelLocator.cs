@@ -13,11 +13,9 @@
 */
 
 using System;
-using GalaSoft.MvvmLight.Messaging;
-using HardTrainingCore.Messages;
-using HardTrainingViews.Views.Logger;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
+using HardTrainingViewsModel.UserDataModule;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 
@@ -45,6 +43,8 @@ namespace HardTrainingViews.VMLocator
         public ProfileManagerViewModel ProfileManager => ServiceLocator.Current.GetInstance<ProfileManagerViewModel>();
 
         public CommonModuleViewModel CommonModule => ServiceLocator.Current.GetInstance<CommonModuleViewModel>();
+
+        public UserDataViewModel UserDataModule => ServiceLocator.Current.GetInstance<UserDataViewModel>();
 
         public static void Cleanup()
         {

@@ -6,8 +6,19 @@
         mc:Ignorable="d"
         Title="HardTraining" Height="600" Width="800"
         DataContext="{Binding Source={StaticResource Locator}, Path=CommonModule}" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
-
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Moduły"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+  
     <Grid>
-        
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Moduły">
+                    <MenuItem Header="Dane użytkownika" Command="{Binding ShowUserDataCommand}"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
     </Grid>
 </Window>

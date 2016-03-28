@@ -1,22 +1,25 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using EntityFrameworkDomain.Models.Logger;
+using EntityFrameworkDomain.Context.Interfaces;
+using HardTrainingPoco.Models.UserDataModule;
+using HardTrainingPoco.POCO.Logger;
 
-namespace EntityFrameworkDomain.Models.Context.Concrete
+namespace EntityFrameworkDomain.Context.Concrete
 {
-    public class LoggerContext : DbContext, ILoggerContext
+    public class HardTrainingMainContext : DbContext, ILoggerContext
     {
-        public LoggerContext()
+        public HardTrainingMainContext()
             : base("HardTrainingConnection")
         {
         }
         
         /*Tables:*/
         public DbSet<Profile> Profiles { get; set; }
+        public DbSet<UserBasicData> UserDatas { get; set; }
 
-        public static LoggerContext Create()
+        public static HardTrainingMainContext Create()
         {
-            return new LoggerContext();   
+            return new HardTrainingMainContext();   
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

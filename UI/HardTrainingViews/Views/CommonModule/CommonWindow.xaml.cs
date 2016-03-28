@@ -2,7 +2,7 @@
 using GalaSoft.MvvmLight.Messaging;
 using HardTrainingViews.VMLocator;
 using HardTrainingCore.Messages;
-using HardTrainingViews.Views.Logger;
+using HardTrainingViews.Views.UserDataModule;
 
 namespace HardTrainingViews.Views.CommonModule
 {
@@ -14,7 +14,16 @@ namespace HardTrainingViews.Views.CommonModule
         public CommonWindow()
         {
             InitializeComponent();
+            Messenger.Default.Register<ChangePageInCommonViewMessage>(this, this.OpenView);
             Closing += (s, e) => ViewModelLocator.Cleanup();
+        }
+
+        private void OpenView(ChangePageInCommonViewMessage msg)
+        {
+            if (msg.TypeOfPageViewToOpen == TypesOfViews.UserData)
+            {
+                this.Content = new UserDataView();
+            }
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Linq;
-using EntityFrameworkDomain.Models.Context;
-using EntityFrameworkDomain.Models.Logger;
+using EntityFrameworkDomain.Context.Interfaces;
 using EntityFrameworkDomain.Repository.Interfaces.Logger;
+using HardTrainingPoco.POCO.Logger;
 
 namespace EntityFrameworkDomain.Repository.Concrete.Logger
 {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
-using EntityFrameworkDomain.Models.Logger;
+using EntityFrameworkDomain.Repository;
 using EntityFrameworkDomain.Repository.Interfaces.Logger;
+using HardTrainingPoco.POCO.Logger;
 using HardTrainingServices.Logger;
 using Moq;
 using NUnit.Framework;
@@ -12,7 +12,7 @@ namespace HardTrainingServicesTests.Logger
     [TestFixture]
     public class ProfileCheckerTests
     {
-        private Mock<ILoggerRepo> mockLoggerRepo;
+        private Mock<IReadAll<Profile>> mockEntityReader;
         private ProfileChecker systemUnderTests;
         private IQueryable<Profile> existingProfiles;
         private const string name = "aaaaaa";
@@ -21,8 +21,8 @@ namespace HardTrainingServicesTests.Logger
         [SetUp]
         public void SetUp()
         {
-            this.mockLoggerRepo = new Mock<ILoggerRepo>();
-            this.systemUnderTests = new ProfileChecker(mockLoggerRepo.Object);
+            this.mockEntityReader = new Mock<IReadAll<Profile>>();
+            this.systemUnderTests = new ProfileChecker(mockEntityReader.Object);
 
             existingProfiles =
                 new EnumerableQuery<Profile>(new List<Profile>()
@@ -34,7 +34,7 @@ namespace HardTrainingServicesTests.Logger
         [Test]
         public void IsExistProfile_WhenProfileWithNameAndPasswordPutInParamsExist_ReturnsTrue()
         {
-            mockLoggerRepo.Setup(lr => lr.GetProfiles()).Returns(existingProfiles);
+            mockEntityReader.Setup(lr => lr.ReadAll()).Returns(existingProfiles);
 
             var result = this.systemUnderTests.IsExistProfile(name, pass);
             const bool expected = true;
@@ -45,7 +45,7 @@ namespace HardTrainingServicesTests.Logger
         [Test]
         public void IsExistProfile_WhenProfileWithNameAndpasswordPutInParamsNotExist_ReturnsFalse()
         {
-            mockLoggerRepo.Setup(lr => lr.GetProfiles()).Returns(existingProfiles);
+            mockEntityReader.Setup(lr => lr.ReadAll()).Returns(existingProfiles);
 
             var result = this.systemUnderTests.IsExistProfile(pass, name);
             const bool expected = false;

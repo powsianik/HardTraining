@@ -1,15 +1,18 @@
 ﻿using System;
-using EntityFrameworkDomain.Models.Context;
-using EntityFrameworkDomain.Models.Context.Concrete;
-using EntityFrameworkDomain.Models.Logger;
+using System.Data.Entity;
+using EntityFrameworkDomain.Context.Concrete;
+using EntityFrameworkDomain.Context.Interfaces;
 using EntityFrameworkDomain.Repository;
 using EntityFrameworkDomain.Repository.Concrete;
 using EntityFrameworkDomain.Repository.Concrete.Logger;
 using EntityFrameworkDomain.Repository.Interfaces.Logger;
+using HardTrainingPoco.POCO.Logger;
 using HardTrainingServices.Logger;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
+using HardTrainingViewsModel.UserDataModule;
 using Microsoft.Practices.Unity;
+using NLog;
 
 namespace HardTrainingViews
 {
@@ -24,17 +27,22 @@ namespace HardTrainingViews
 
         private void Register()
         {
-            this.iocContainer.RegisterType<ILoggerContext, LoggerContext>();
-            this.iocContainer.RegisterType<ILoggerRepo, LoggerRepository>(new PerResolveLifetimeManager());
+            this.iocContainer.RegisterType<HardTrainingMainContext>(new ContainerControlledLifetimeManager());
+            this.iocContainer.RegisterType<DbContext, HardTrainingMainContext>();
+            this.iocContainer.RegisterType<ILoggerContext, HardTrainingMainContext>();
+            this.iocContainer.RegisterType<ILoggerRepo, LoggerRepository>();
 
+            this.iocContainer.RegisterType<IReadAll<Profile>, EntityReader<Profile>>();
             this.iocContainer.RegisterType<ProfileChecker>();
             this.iocContainer.RegisterType<LoggerViewModel>();
 
-            this.iocContainer.RegisterType<ICreate<Profile>, EntityCreator<Profile>>(new InjectionConstructor(this.iocContainer.Resolve<ILoggerContext>()));
+            this.iocContainer.RegisterType<ICreate<Profile>, EntityCreator<Profile>>();
             this.iocContainer.RegisterType<SimpleProfileCreator>();
-            this.iocContainer.RegisterType<IDelete<Profile>, EntityDeleter<Profile>>(new InjectionConstructor(this.iocContainer.Resolve<ILoggerContext>()));
+            this.iocContainer.RegisterType<IDelete<Profile>, EntityDeleter<Profile>>();
             this.iocContainer.RegisterType<SimpleProfileDeleter>();
             this.iocContainer.RegisterType<ProfileManagerViewModel>();
+
+            this.iocContainer.RegisterType<UserDataViewModel>();
 
             this.iocContainer.RegisterType<CommonModuleViewModel>();
         }

@@ -48,6 +48,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Database\HardTrainingPoco\HardTrainingPoco.csproj">
+      <Project>{49e96329-f639-441f-b325-1e2c5f6a262a}</Project>
+      <Name>HardTrainingPoco</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HardTrainingServiceInterfaces\HardTrainingServiceInterfaces.csproj">
       <Project>{fa3c5201-bd8c-4ac5-95ff-3de35873470f}</Project>
       <Name>HardTrainingServiceInterfaces</Name>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A123FCD5-24AF-4316-BE46-421235E45AF2}</ProjectGuid>
+    <ProjectGuid>{49E96329-F639-441F-B325-1E2C5F6A262A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HardTrainingCore</RootNamespace>
-    <AssemblyName>HardTrainingCore</AssemblyName>
+    <RootNamespace>HardTrainingPoco</RootNamespace>
+    <AssemblyName>HardTrainingPoco</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,9 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,10 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="Messages\ChangePageInCommonViewMessage.cs" />
-    <Compile Include="Messages\OpenViewMessage.cs" />
-    <Compile Include="Enums\TypesOfViews.cs" />
+    <Compile Include="POCO\Logger\Profile.cs" />
+    <Compile Include="POCO\UserDataModule\UserBasicData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

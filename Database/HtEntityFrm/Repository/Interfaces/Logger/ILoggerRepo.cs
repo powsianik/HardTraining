@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using EntityFrameworkDomain.Models.Logger;
+using HardTrainingPoco.POCO.Logger;
 
 namespace EntityFrameworkDomain.Repository.Interfaces.Logger
 {

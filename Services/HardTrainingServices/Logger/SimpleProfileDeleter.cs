@@ -1,6 +1,6 @@
-﻿using EntityFrameworkDomain.Models.Logger;
-using EntityFrameworkDomain.Repository;
+﻿using EntityFrameworkDomain.Repository;
 using EntityFrameworkDomain.Repository.Interfaces.Logger;
+using HardTrainingPoco.POCO.Logger;
 
 namespace HardTrainingServices.Logger
 {

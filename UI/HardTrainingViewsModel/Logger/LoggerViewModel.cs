@@ -33,7 +33,7 @@ namespace HardTrainingViewsModel.Logger
 
         public string Name => "Logger";
 
-        public void LogOn()
+        private void LogOn()
         {
             if (this.profileChecker.IsExistProfile(ProfileName, ProfilePass))
             {

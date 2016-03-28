@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using EntityFrameworkDomain.Models.Logger;
+using HardTrainingPoco.POCO.Logger;
 
-namespace EntityFrameworkDomain.Models.Context
+namespace EntityFrameworkDomain.Context.Interfaces
 {
     public interface ILoggerContext
     {

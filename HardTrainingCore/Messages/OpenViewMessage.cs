@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace HardTrainingCore.Messages
 {
     public class OpenViewMessage

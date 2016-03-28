@@ -119,13 +119,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="IocContainerConfig.cs" />
-    <Compile Include="Views\Logger\LoggerView.xaml.cs">
+    <Compile Include="Views\LoggerModule\LoggerView.xaml.cs">
       <DependentUpon>LoggerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Logger\ProfileManagerView.xaml.cs">
+    <Compile Include="Views\LoggerModule\ProfileManagerView.xaml.cs">
       <DependentUpon>ProfileManagerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Logger\UserControls\ProfileOperationsAssistant.xaml.cs">
+    <Compile Include="Views\LoggerModule\UserControls\ProfileOperationsAssistant.xaml.cs">
       <DependentUpon>ProfileOperationsAssistant.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\Core.xaml">
@@ -148,6 +148,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Views\UserDataModule\UserDataView.xaml.cs">
+      <DependentUpon>UserDataView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VMLocator\ViewModelLocator.cs" />
     <Compile Include="Views\CommonModule\CommonWindow.xaml.cs">
       <DependentUpon>CommonWindow.xaml</DependentUpon>
@@ -156,17 +159,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Logger\LoggerView.xaml">
+    <Page Include="Views\LoggerModule\LoggerView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Logger\ProfileManagerView.xaml">
+    <Page Include="Views\LoggerModule\ProfileManagerView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Logger\UserControls\ProfileOperationsAssistant.xaml">
+    <Page Include="Views\LoggerModule\UserControls\ProfileOperationsAssistant.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UserDataModule\UserDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +235,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Database\HardTrainingPoco\HardTrainingPoco.csproj">
+      <Project>{49e96329-f639-441f-b325-1e2c5f6a262a}</Project>
+      <Name>HardTrainingPoco</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Database\HtEntityFrm\HtEntityFrmModel.csproj">
       <Project>{ffb9bc14-9cf3-4821-a63b-13b519a60893}</Project>
       <Name>HtEntityFrmModel</Name>

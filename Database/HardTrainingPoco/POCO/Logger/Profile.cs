@@ -1,18 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using HardTrainingPoco.Models.UserDataModule;
 
-namespace EntityFrameworkDomain.Models.Logger
+namespace HardTrainingPoco.POCO.Logger
 {
     public class Profile
     {
         public Profile()
         {
-            
+            this.UserBasicData = new HashSet<UserBasicData>();
         }
 
         [Key]
         [Display(Name = "Id:")]
-        public int Id { get; set; }
+        public short Id { get; set; }
 
         [Display(Name = "User name:")]
         [MaxLength(32)]
@@ -26,9 +28,7 @@ namespace EntityFrameworkDomain.Models.Logger
         [MaxLength(64)]
         public string Password { get; set; }
 
-        /* 
-         * Make from this a DataUser or something:
-        public virtual User User { get; set; }
-         */
+        public virtual ICollection<UserBasicData> UserBasicData { get; private set; }
+
     }
 }

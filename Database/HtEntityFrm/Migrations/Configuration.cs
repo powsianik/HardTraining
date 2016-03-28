@@ -1,18 +1,18 @@
-using System;
-using System.Data.Entity.Migrations;
-using EntityFrameworkDomain.Models.Context.Concrete;
-using EntityFrameworkDomain.Models.Logger;
-
 namespace EntityFrameworkDomain.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<LoggerContext>
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<EntityFrameworkDomain.Context.Concrete.HardTrainingMainContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(LoggerContext context)
+        protected override void Seed(EntityFrameworkDomain.Context.Concrete.HardTrainingMainContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -26,20 +26,6 @@ namespace EntityFrameworkDomain.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-            this.SeedProfiles(context);
-        }
-
-        private void SeedProfiles(LoggerContext context)
-        {
-            for (int i = 0; i < 5; ++i)
-            {
-                Profile profile = new Profile() { CreationDate = DateTime.Now, Name = "Pshepo", Password = "rbk55m" };
-
-                context.Set<Profile>().AddOrUpdate(profile);
-            }
-            
-            context.SaveChanges();
         }
     }
 }

@@ -4,6 +4,7 @@
     {
         Logger,
         ProfileManager,
-        CommonViewModule
+        CommonViewModule,
+        UserData,
     }
 }

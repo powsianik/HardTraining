@@ -3,10 +3,11 @@ using System.Windows;
 using GalaSoft.MvvmLight.Messaging;
 using HardTrainingCore.Messages;
 using HardTrainingViews.Views.CommonModule;
+using HardTrainingViews.Views.Logger;
 using HardTrainingViews.VMLocator;
 using HardTrainingViewsModel.Logger;
 
-namespace HardTrainingViews.Views.Logger
+namespace HardTrainingViews.Views.LoggerModule
 {
     /// <summary>
     /// Interaction logic for LoggerView.xaml

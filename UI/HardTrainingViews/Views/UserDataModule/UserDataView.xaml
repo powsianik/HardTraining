@@ -1,0 +1,82 @@
+﻿<Page x:Class="HardTrainingViews.Views.UserDataModule.UserDataView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="UserDataView" Background="Gray"
+      DataContext="{Binding Source={StaticResource Locator}, Path=UserDataModule}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+
+        <Label FontSize="24" FontWeight="Bold" FontFamily="Global Monospace" Height="36" VerticalAlignment="Top">Nazwa uzytkownika:</Label>
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label FontFamily="Global Monospace" FontSize="16">Wiek:</Label>
+                    <Label Content="{Binding UserData.Age}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontSize="16" FontFamily="Global Monospace">Wzrost:</Label>
+                    <Label Content="{Binding UserData.Height}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontSize="16" FontFamily="Global Monospace">Waga:</Label>
+                    <Label Content="{Binding UserData.Weight}"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="100,0,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <Label FontFamily="Global Monospace" FontSize="16">Kark:</Label>
+                    <Label/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+                    <Label FontFamily="Global Monospace" FontSize="16">Ramię:</Label>
+                    <Label/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontFamily="Global Monospace" FontSize="16">Przedramię:</Label>
+                    <Label/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontFamily="Global Monospace" FontSize="16">Nadgarstek:</Label>
+                    <Label/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+                    <Label FontFamily="Global Monospace" FontSize="16">Klatka piersiowa:</Label>
+                    <Label/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontFamily="Global Monospace" FontSize="16">Talia:</Label>
+                    <Label/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontFamily="Global Monospace" FontSize="16">Biodra:</Label>
+                    <Label/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+                    <Label FontFamily="Global Monospace" FontSize="16">Udo:</Label>
+                    <Label/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontFamily="Global Monospace" FontSize="16">Łydka:</Label>
+                    <Label/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label FontFamily="Global Monospace" FontSize="16">Staw skokowy:</Label>
+                    <Label/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

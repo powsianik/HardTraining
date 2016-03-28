@@ -79,14 +79,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201512251710057_First.cs" />
-    <Compile Include="Migrations\201512251710057_First.Designer.cs">
-      <DependentUpon>201512251710057_First.cs</DependentUpon>
+    <Compile Include="Context\Interfaces\IUserDataContext.cs" />
+    <Compile Include="Context\Concrete\HardTrainingMainContext.cs" />
+    <Compile Include="Context\Interfaces\ILoggerContext.cs" />
+    <Compile Include="Migrations\201603251759376_First.cs" />
+    <Compile Include="Migrations\201603251759376_First.Designer.cs">
+      <DependentUpon>201603251759376_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Context\Concrete\LoggerContext.cs" />
-    <Compile Include="Models\Context\ILoggerContext.cs" />
-    <Compile Include="Models\Logger\Profile.cs" />
     <Compile Include="Repository\Concrete\EntityCreator.cs" />
     <Compile Include="Repository\Concrete\EntityDeleter.cs" />
     <Compile Include="Repository\Concrete\EntityReader.cs" />
@@ -118,8 +118,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512251710057_First.resx">
-      <DependentUpon>201512251710057_First.cs</DependentUpon>
+    <ProjectReference Include="..\HardTrainingPoco\HardTrainingPoco.csproj">
+      <Project>{49e96329-f639-441f-b325-1e2c5f6a262a}</Project>
+      <Name>HardTrainingPoco</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201603251759376_First.resx">
+      <DependentUpon>201603251759376_First.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
