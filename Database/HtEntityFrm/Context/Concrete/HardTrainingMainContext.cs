@@ -1,12 +1,12 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using EntityFrameworkDomain.Context.Interfaces;
-using HardTrainingPoco.Models.UserDataModule;
 using HardTrainingPoco.POCO.Logger;
+using HardTrainingPoco.POCO.UserDataModule;
 
 namespace EntityFrameworkDomain.Context.Concrete
 {
-    public class HardTrainingMainContext : DbContext, ILoggerContext
+    public class HardTrainingMainContext : DbContext, IHardTrainingContext
     {
         public HardTrainingMainContext()
             : base("HardTrainingConnection")
@@ -15,7 +15,7 @@ namespace EntityFrameworkDomain.Context.Concrete
         
         /*Tables:*/
         public DbSet<Profile> Profiles { get; set; }
-        public DbSet<UserBasicData> UserDatas { get; set; }
+        public DbSet<UserData> UserDatas { get; set; }
 
         public static HardTrainingMainContext Create()
         {

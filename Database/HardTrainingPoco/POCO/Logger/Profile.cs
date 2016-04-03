@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using HardTrainingPoco.Models.UserDataModule;
+using HardTrainingPoco.POCO.UserDataModule;
 
 namespace HardTrainingPoco.POCO.Logger
 {
@@ -9,7 +9,7 @@ namespace HardTrainingPoco.POCO.Logger
     {
         public Profile()
         {
-            this.UserBasicData = new HashSet<UserBasicData>();
+            this.UserBasicData = new HashSet<UserData>();
         }
 
         [Key]
@@ -28,7 +28,7 @@ namespace HardTrainingPoco.POCO.Logger
         [MaxLength(64)]
         public string Password { get; set; }
 
-        public virtual ICollection<UserBasicData> UserBasicData { get; private set; }
+        public virtual ICollection<UserData> UserBasicData { get; private set; }
 
     }
 }

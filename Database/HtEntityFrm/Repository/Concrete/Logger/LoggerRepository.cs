@@ -8,9 +8,9 @@ namespace EntityFrameworkDomain.Repository.Concrete.Logger
 {
     public class LoggerRepository : ILoggerRepo
     {
-        private readonly ILoggerContext _db;
+        private readonly IHardTrainingContext _db;
 
-        public LoggerRepository(ILoggerContext loggerContext)
+        public LoggerRepository(IHardTrainingContext loggerContext)
         {
             this._db = loggerContext;
         }

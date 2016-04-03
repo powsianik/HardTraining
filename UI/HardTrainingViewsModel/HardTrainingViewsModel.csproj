@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonModule\CommonModuleViewModel.cs" />
+    <Compile Include="Interfaces\IContainId.cs" />
     <Compile Include="Logger\LoggerViewModel.cs" />
     <Compile Include="Logger\ProfileManagerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

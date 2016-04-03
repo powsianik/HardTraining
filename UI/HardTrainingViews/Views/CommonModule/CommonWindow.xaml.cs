@@ -23,6 +23,7 @@ namespace HardTrainingViews.Views.CommonModule
             if (msg.TypeOfPageViewToOpen == TypesOfViews.UserData)
             {
                 this.Content = new UserDataView();
+                
             }
         }
     }

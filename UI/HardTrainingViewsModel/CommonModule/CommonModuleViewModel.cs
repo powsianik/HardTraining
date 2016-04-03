@@ -1,16 +1,20 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using HardTrainingCore.Messages;
+using HardTrainingViewsModel.Interfaces;
 
 namespace HardTrainingViewsModel.CommonModule
 {
-    public class CommonModuleViewModel : ViewModelBase
+    public class CommonModuleViewModel : ViewModelBase, IContainId
     {
         public CommonModuleViewModel()
         {
             this.ShowUserDataCommand = new RelayCommand(this.ShowUserData);
         }
+
+        public short IdOfProfile { private get; set; }
 
         public string Name => "CommonModule";
 
@@ -18,7 +22,7 @@ namespace HardTrainingViewsModel.CommonModule
 
         private void ShowUserData()
         {
-            MessengerInstance.Send(new ChangePageInCommonViewMessage(TypesOfViews.UserData));
+            MessengerInstance.Send(new ChangePageInCommonViewMessage(TypesOfViews.UserData, IdOfProfile));
         }
     }
 }

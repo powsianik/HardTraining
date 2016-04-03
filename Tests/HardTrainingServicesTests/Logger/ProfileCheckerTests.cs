@@ -36,7 +36,8 @@ namespace HardTrainingServicesTests.Logger
         {
             mockEntityReader.Setup(lr => lr.ReadAll()).Returns(existingProfiles);
 
-            var result = this.systemUnderTests.IsExistProfile(name, pass);
+            short profileId;
+            var result = this.systemUnderTests.IsExistProfile(name, pass, out profileId);
             const bool expected = true;
 
             Assert.AreEqual(expected, result);
@@ -47,7 +48,8 @@ namespace HardTrainingServicesTests.Logger
         {
             mockEntityReader.Setup(lr => lr.ReadAll()).Returns(existingProfiles);
 
-            var result = this.systemUnderTests.IsExistProfile(pass, name);
+            short profileId;
+            var result = this.systemUnderTests.IsExistProfile(pass, name, out profileId);
             const bool expected = false;
 
             Assert.AreEqual(expected, expected);

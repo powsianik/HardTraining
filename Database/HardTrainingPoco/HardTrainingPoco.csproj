@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="POCO\Logger\Profile.cs" />
-    <Compile Include="POCO\UserDataModule\UserBasicData.cs" />
+    <Compile Include="POCO\UserDataModule\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

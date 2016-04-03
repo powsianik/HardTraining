@@ -148,6 +148,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Views\UserDataModule\UserDataSetterView.xaml.cs">
+      <DependentUpon>UserDataSetterView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserDataModule\UserDataView.xaml.cs">
       <DependentUpon>UserDataView.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
     <Page Include="Views\LoggerModule\UserControls\ProfileOperationsAssistant.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\UserDataModule\UserDataSetterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserDataModule\UserDataView.xaml">
       <SubType>Designer</SubType>

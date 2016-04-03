@@ -5,6 +5,7 @@ using HardTrainingCore.Messages;
 using HardTrainingViews.Views.CommonModule;
 using HardTrainingViews.Views.Logger;
 using HardTrainingViews.VMLocator;
+using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
 
 namespace HardTrainingViews.Views.LoggerModule
@@ -39,6 +40,12 @@ namespace HardTrainingViews.Views.LoggerModule
             {
                 var view = new CommonWindow();
                 view.Show();
+
+                var vm = view.DataContext as CommonModuleViewModel;
+                if (vm != null)
+                {
+                    vm.IdOfProfile = msg.ProfileId;
+                }
 
                 this.Close();
             }

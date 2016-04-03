@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using HardTrainingPoco.POCO.Logger;
 
-namespace HardTrainingPoco.Models.UserDataModule
+namespace HardTrainingPoco.POCO.UserDataModule
 {
-    public class UserBasicData
+    public class UserData
     {
-        public UserBasicData()
+        public UserData()
         {
             
         }

@@ -79,12 +79,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\Interfaces\IUserDataContext.cs" />
     <Compile Include="Context\Concrete\HardTrainingMainContext.cs" />
-    <Compile Include="Context\Interfaces\ILoggerContext.cs" />
+    <Compile Include="Context\Interfaces\IHardTrainingContext.cs" />
     <Compile Include="Migrations\201603251759376_First.cs" />
     <Compile Include="Migrations\201603251759376_First.Designer.cs">
       <DependentUpon>201603251759376_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604031253515_Second.cs" />
+    <Compile Include="Migrations\201604031253515_Second.Designer.cs">
+      <DependentUpon>201604031253515_Second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\Concrete\EntityCreator.cs" />
@@ -93,10 +96,12 @@
     <Compile Include="Repository\Concrete\EntityUpdater.cs" />
     <Compile Include="Repository\Concrete\Exceptions\LoginOrPasswordIncorrectException.cs" />
     <Compile Include="Repository\Concrete\Logger\LoggerRepository.cs" />
+    <Compile Include="Repository\Concrete\UserDataModule\UserDataRepository.cs" />
     <Compile Include="Repository\ICreate.cs" />
     <Compile Include="Repository\IDelete.cs" />
     <Compile Include="Repository\Interfaces\IGenericRepo.cs" />
     <Compile Include="Repository\Interfaces\Logger\ILoggerRepo.cs" />
+    <Compile Include="Repository\Interfaces\UserDataModule\IUserDataRepo.cs" />
     <Compile Include="Repository\IReadAll.cs" />
     <Compile Include="Repository\IUpdate.cs" />
   </ItemGroup>
@@ -126,6 +131,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201603251759376_First.resx">
       <DependentUpon>201603251759376_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604031253515_Second.resx">
+      <DependentUpon>201604031253515_Second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

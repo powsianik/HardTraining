@@ -43,9 +43,9 @@ namespace HardTrainingViewsModel.Logger
 
         private Profile SelectedProfile { get; set; }
 
-        private string ProfileName { get; set; }
+        public string ProfileName { get; set; }
 
-        private string ProfilePassword { get; set; }
+        public string ProfilePassword { get; set; }
 
         public ObservableCollection<Profile> Profiles
         {
