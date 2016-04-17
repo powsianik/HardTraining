@@ -17,7 +17,7 @@ namespace HardTrainingViews.Views.UserDataModule
     /// <summary>
     /// Interaction logic for UserDataSetterView.xaml
     /// </summary>
-    public partial class UserDataSetterView : Window
+    public partial class UserDataSetterView : Page
     {
         public UserDataSetterView()
         {

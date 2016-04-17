@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Messaging;
 using HardTrainingCore.Messages;
 using HardTrainingViewsModel.UserDataModule;
+using Microsoft.Practices.ServiceLocation;
 
 namespace HardTrainingViews.Views.UserDataModule
 {
@@ -21,15 +22,17 @@ namespace HardTrainingViews.Views.UserDataModule
         {
             if (msg.TypeOfViewToOpen == TypesOfViews.UserDataSetter)
             {
+                /*
                 var view = new UserDataSetterView();
-                
-                var vm = view.DataContext as UserDataViewModel;
+
+                var vm = ServiceLocator.Current.GetInstance(typeof (UserDataViewModel)) as UserDataViewModel;
                 if (vm != null)
                 {
                     vm.IdOfProfile = msg.ProfileId;
                 }
-                
+
                 view.Show();
+                */
             }
         }
     }

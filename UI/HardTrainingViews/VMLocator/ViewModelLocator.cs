@@ -13,6 +13,9 @@
 */
 
 using System;
+using GalaSoft.MvvmLight.Messaging;
+using HardTrainingCore.Messages;
+using HardTrainingViews.Navigation;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
 using HardTrainingViewsModel.UserDataModule;
@@ -36,6 +39,8 @@ namespace HardTrainingViews.VMLocator
         {
             this.iocConfig = new IocContainerConfig();
             ServiceLocator.SetLocatorProvider(() => new UnityServiceLocator(this.iocConfig.GetPreparingContainer()));
+
+            Messenger.Default.Register<OpenViewMessage>(this, this.ViewTransition);
         }
 
         public LoggerViewModel Logger => ServiceLocator.Current.GetInstance<LoggerViewModel>();
@@ -62,6 +67,22 @@ namespace HardTrainingViews.VMLocator
             if (isDisposing)
             {
                 this.iocConfig.Dispose();
+            }
+        }
+
+        private void ViewTransition(OpenViewMessage msg)
+        {
+            switch (msg.TypeOfViewToOpen)
+            {
+                case TypesOfViews.CommonViewModule:
+                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new Uri("../Views/CommonModule/CommonWindow.xaml", UriKind.Relative));
+                    break;
+                case TypesOfViews.UserData:
+                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new Uri("../Views/UserDataModule/UserDataView.xaml", UriKind.Relative));
+                    break;
+                case TypesOfViews.UserDataSetter:
+                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new Uri("../Views/UserDataModule/UserDataSetterView.xaml", UriKind.Relative));
+                    break;
             }
         }
     }

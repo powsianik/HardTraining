@@ -22,7 +22,7 @@ namespace HardTrainingViewsModel.CommonModule
 
         private void ShowUserData()
         {
-            MessengerInstance.Send(new ChangePageInCommonViewMessage(TypesOfViews.UserData, IdOfProfile));
+            MessengerInstance.Send(new OpenViewMessage(TypesOfViews.UserData, IdOfProfile));
         }
     }
 }

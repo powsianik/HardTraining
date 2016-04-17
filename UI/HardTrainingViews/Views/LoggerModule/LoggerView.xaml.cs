@@ -36,16 +36,17 @@ namespace HardTrainingViews.Views.LoggerModule
                 var view = new ProfileManagerView();
                 view.Show();
             }
-            else if (msg.TypeOfViewToOpen == TypesOfViews.CommonViewModule)
+            else if (msg.TypeOfViewToOpen == TypesOfViews.NavigationWindow)
             {
-                var view = new CommonWindow();
+                var view = new WindowForNavigation();
                 view.Show();
 
+                /*
                 var vm = view.DataContext as CommonModuleViewModel;
                 if (vm != null)
                 {
                     vm.IdOfProfile = msg.ProfileId;
-                }
+                }*/
 
                 this.Close();
             }

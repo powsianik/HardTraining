@@ -2,6 +2,7 @@
 using System.Resources;
 using System.Windows;
 using GalaSoft.MvvmLight.Threading;
+using HardTrainingViews.Views;
 
 namespace HardTrainingViews
 {
@@ -18,6 +19,8 @@ namespace HardTrainingViews
             var pathToCodeBase = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
             AppDomain.CurrentDomain.SetData("DataDirectory", new Uri(pathToCodeBase).LocalPath);
             
+            //Application.Current.MainWindow = new WindowForNavigation();
+
             DispatcherHelper.Initialize();
         }
     }

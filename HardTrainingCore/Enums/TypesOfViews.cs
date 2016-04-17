@@ -7,5 +7,6 @@
         CommonViewModule,
         UserData,
         UserDataSetter,
+        NavigationWindow
     }
 }
