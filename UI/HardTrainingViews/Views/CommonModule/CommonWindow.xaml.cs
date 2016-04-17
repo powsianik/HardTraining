@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Messaging;
 using HardTrainingViews.VMLocator;
 using HardTrainingCore.Messages;
 using HardTrainingViews.Views.UserDataModule;
+using HardTrainingViewsModel.UserDataModule;
 
 namespace HardTrainingViews.Views.CommonModule
 {
@@ -23,7 +24,11 @@ namespace HardTrainingViews.Views.CommonModule
             if (msg.TypeOfPageViewToOpen == TypesOfViews.UserData)
             {
                 this.Content = new UserDataView();
-                
+                var vm = ((UserDataView) this.Content).DataContext as UserDataViewModel;
+                if (vm != null)
+                {
+                    vm.IdOfProfile = msg.ProfileId;
+                }
             }
         }
     }

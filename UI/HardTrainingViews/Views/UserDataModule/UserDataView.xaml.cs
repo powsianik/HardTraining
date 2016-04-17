@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows.Controls;
+using GalaSoft.MvvmLight.Messaging;
+using HardTrainingCore.Messages;
+using HardTrainingViewsModel.UserDataModule;
 
 namespace HardTrainingViews.Views.UserDataModule
 {
@@ -23,6 +13,24 @@ namespace HardTrainingViews.Views.UserDataModule
         public UserDataView()
         {
             InitializeComponent();
+
+            Messenger.Default.Register<OpenViewMessage>(this, this.OpenView);
+        }
+
+        private void OpenView(OpenViewMessage msg)
+        {
+            if (msg.TypeOfViewToOpen == TypesOfViews.UserDataSetter)
+            {
+                var view = new UserDataSetterView();
+                
+                var vm = view.DataContext as UserDataViewModel;
+                if (vm != null)
+                {
+                    vm.IdOfProfile = msg.ProfileId;
+                }
+                
+                view.Show();
+            }
         }
     }
 }

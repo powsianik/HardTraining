@@ -44,7 +44,7 @@ namespace HardTrainingViews.VMLocator
 
         public CommonModuleViewModel CommonModule => ServiceLocator.Current.GetInstance<CommonModuleViewModel>();
 
-        public UserDataViewModel UserDataModule => ServiceLocator.Current.GetInstance<UserDataViewModel>();
+        public UserDataViewModel UserDataModule => ServiceLocator.Current.GetInstance<UserDataViewModel>(); 
 
         public static void Cleanup()
         {

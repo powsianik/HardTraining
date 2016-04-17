@@ -8,7 +8,7 @@ namespace EntityFrameworkDomain.Repository.Concrete.UserDataModule
 {
     public class UserDataRepository : IUserDataRepo
     {
-        private IHardTrainingContext db;
+        private readonly IHardTrainingContext db;
 
         public UserDataRepository(IHardTrainingContext context)
         {
@@ -20,6 +20,19 @@ namespace EntityFrameworkDomain.Repository.Concrete.UserDataModule
             var userData = this.db.UserDatas.FirstOrDefault(ud => ud.ProfileId == profileId);
 
             return userData;
+        }
+
+        public void SaveUserData(UserData userData)
+        {
+            if (userData != null)
+            {
+                this.db.UserDatas.Add(userData);
+            }
+        }
+
+        public void SaveChanges()
+        {
+            this.db.SaveChanges();
         }
     }
 }

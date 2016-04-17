@@ -46,7 +46,7 @@ namespace HardTrainingViews
             this.iocContainer.RegisterType<SimpleProfileDeleter>();
             this.iocContainer.RegisterType<ProfileManagerViewModel>();
 
-            this.iocContainer.RegisterType<UserDataViewModel>();
+            this.iocContainer.RegisterType<UserDataViewModel>(new ContainerControlledLifetimeManager());
 
             this.iocContainer.RegisterType<CommonModuleViewModel>();
         }

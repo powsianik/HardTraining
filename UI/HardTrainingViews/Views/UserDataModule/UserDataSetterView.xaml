@@ -25,51 +25,51 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="103">Kark:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Neck, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="104">Ramię:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Arm, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="104">Przedramię:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.ForeArm, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="104">Nadgarstek:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Wrist, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <Label FontFamily="Global Monospace" FontSize="14">Klatka piersiowa:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Chest, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="153">Talia:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Waist, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="153">Biodra:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Hips, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="153">Udo:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Thigh, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="153">Łydka:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData., Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="153">Staw skokowy:</Label>
-                    <TextBox Text="{Binding UserData.Weight, Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Ankle, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
                 
-                <Button Content="Zapisz"></Button>
+                <Button Content="Zapisz" Command="{Binding SaveUserDataCommand}"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>
