@@ -6,7 +6,7 @@ namespace HardTrainingViews.Navigation
 {
     public class NavigationPageService : INavigationService
     {
-        private NavigationPa
+        //private NavigationPa
 
         public string CurrentPageKey
         {
