@@ -18,6 +18,12 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" Grid.RowSpan="3" Grid.ColumnSpan="3">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="-0.052,0.467" StartPoint="1.13,0.474">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
             <Label Content="Logger"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
                 <Label Content="{DynamicResource Username}"></Label>

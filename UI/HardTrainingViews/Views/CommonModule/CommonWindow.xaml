@@ -15,6 +15,12 @@
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top">
+                <Menu.Background>
+                    <LinearGradientBrush EndPoint="0.019,0.47" StartPoint="0.986,0.462">
+                        <GradientStop Color="#FF0E0101"/>
+                        <GradientStop Color="#FFF1F1F1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Menu.Background>
                 <MenuItem Header="Moduły">
                     <MenuItem Header="Dane użytkownika" Command="{Binding ShowUserDataCommand}"></MenuItem>
                 </MenuItem>

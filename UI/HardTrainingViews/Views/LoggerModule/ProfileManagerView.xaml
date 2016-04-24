@@ -14,6 +14,12 @@
     <Window.Resources>
         <conv:BoolToVisibilityConverter x:Key="visibilityConverter" />
     </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="-0.079,0.445" StartPoint="0.988,0.448">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
 
     <Grid>
         <Grid.ColumnDefinitions>
