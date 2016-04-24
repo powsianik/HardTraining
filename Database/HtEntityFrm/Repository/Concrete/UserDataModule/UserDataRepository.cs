@@ -17,8 +17,8 @@ namespace EntityFrameworkDomain.Repository.Concrete.UserDataModule
 
         public UserData GetUserData(short profileId)
         {
-            var userData = this.db.UserDatas.FirstOrDefault(ud => ud.ProfileId == profileId);
-
+            var userData =
+                this.db.UserDatas.Where(ud => ud.ProfileId == profileId).OrderByDescending(ud => ud.MeasureDate).FirstOrDefault();
             return userData;
         }
 

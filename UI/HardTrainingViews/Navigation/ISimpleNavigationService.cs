@@ -7,7 +7,8 @@ namespace HardTrainingViews.Navigation
     public interface ISimpleNavigationService
     {
         event NavigatingCancelEventHandler Navigating;
-        void NavigateTo(Uri pageUri);
         void NavigateTo(Page page);
+
+        void Back();
     }
 }

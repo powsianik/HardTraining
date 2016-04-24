@@ -40,6 +40,8 @@ namespace HardTrainingPoco.POCO.UserDataModule
 
         public short Thigh { get; set; }
 
+        public short Calf { get; set; }
+
         public short Ankle { get; set; }
 
         [DataType(DataType.Date)]

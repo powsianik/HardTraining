@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
-    <Compile Include="Messages\ChangePageInCommonViewMessage.cs" />
+    <Compile Include="Messages\BackToRecentViewMessage.cs" />
     <Compile Include="Messages\OpenViewMessage.cs" />
     <Compile Include="Enums\TypesOfViews.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

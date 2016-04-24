@@ -3,6 +3,7 @@ using System.Resources;
 using System.Windows;
 using GalaSoft.MvvmLight.Threading;
 using HardTrainingViews.Views;
+using HardTrainingViews.VMLocator;
 
 namespace HardTrainingViews
 {
@@ -11,6 +12,8 @@ namespace HardTrainingViews
     /// </summary>
     public partial class App : Application
     {
+        private static ViewsSwitcher switcher;
+
         static App()
         {
             
@@ -19,7 +22,7 @@ namespace HardTrainingViews
             var pathToCodeBase = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase);
             AppDomain.CurrentDomain.SetData("DataDirectory", new Uri(pathToCodeBase).LocalPath);
             
-            //Application.Current.MainWindow = new WindowForNavigation();
+            switcher = new ViewsSwitcher();
 
             DispatcherHelper.Initialize();
         }

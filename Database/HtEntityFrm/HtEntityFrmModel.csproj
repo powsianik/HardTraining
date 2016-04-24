@@ -89,6 +89,10 @@
     <Compile Include="Migrations\201604031253515_Second.Designer.cs">
       <DependentUpon>201604031253515_Second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604241133151_AddPositionToUserData.cs" />
+    <Compile Include="Migrations\201604241133151_AddPositionToUserData.Designer.cs">
+      <DependentUpon>201604241133151_AddPositionToUserData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\Concrete\EntityCreator.cs" />
     <Compile Include="Repository\Concrete\EntityDeleter.cs" />
@@ -134,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604031253515_Second.resx">
       <DependentUpon>201604031253515_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604241133151_AddPositionToUserData.resx">
+      <DependentUpon>201604241133151_AddPositionToUserData.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

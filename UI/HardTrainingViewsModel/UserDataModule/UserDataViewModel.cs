@@ -11,13 +11,16 @@ namespace HardTrainingViewsModel.UserDataModule
 {
     public class UserDataViewModel : ViewModelBase, IContainId
     {
+        private short idOfProfile;
+        private UserData userData;
         private readonly IUserDataRepo repository;
 
         public UserDataViewModel(IUserDataRepo repo)
         {
             this.repository = repo;
 
-            this.Init();
+            this.OpenUserDataSetterCommand = new RelayCommand(this.OpenDataSetter);
+            this.SaveUserDataCommand = new RelayCommand(this.SaveUserData);
         }
 
         public ICommand OpenUserDataSetterCommand { get; private set; }
@@ -26,22 +29,30 @@ namespace HardTrainingViewsModel.UserDataModule
 
         public bool IsUserDataNotExist { get; private set; }
 
-        public short IdOfProfile { private get; set; }
-
-        public UserData UserData { get; private set; }
-
-        private void Init()
+        public short IdOfProfile
         {
-            this.UserData = repository.GetUserData(this.IdOfProfile);
-
-            if (this.UserData == null)
+            private get { return this.idOfProfile; }
+            set
             {
-                this.IsUserDataNotExist = true;
-                this.UserData = new UserData();
-            }
+                this.idOfProfile = value;
+                this.UserData = repository.GetUserData(this.IdOfProfile);
 
-            this.OpenUserDataSetterCommand = new RelayCommand(this.OpenDataSetter);
-            this.SaveUserDataCommand = new RelayCommand(this.SaveUserData);
+                if (this.UserData == null)
+                {
+                    this.IsUserDataNotExist = true;
+                    this.UserData = new UserData();
+                }
+            }
+        }
+
+        public UserData UserData
+        {
+            get { return this.userData; }
+            set
+            {
+                this.userData = value;
+                this.RaisePropertyChanged();
+            }
         }
 
         private void OpenDataSetter()
@@ -56,6 +67,8 @@ namespace HardTrainingViewsModel.UserDataModule
 
             this.repository.SaveUserData(this.UserData);
             this.repository.SaveChanges();
+
+            MessengerInstance.Send(new BackToRecentViewMessage());
         }
     }
 }

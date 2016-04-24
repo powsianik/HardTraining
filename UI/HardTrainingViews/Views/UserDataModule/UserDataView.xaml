@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
       Title="UserDataView" Background="Gray"
-      DataContext="{Binding Source={StaticResource Locator}, Path=UserDataModule}">
+      DataContext="{Binding UserDataModule, Source={StaticResource Locator}}">
 
     <Page.Resources>
         <converters:BoolToVisibilityConverter x:Key="VisiblityConverter" />
@@ -44,46 +44,46 @@
             <StackPanel Orientation="Vertical" Margin="100,0,0,0">
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="16">Kark:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Neck}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                     <Label FontFamily="Global Monospace" FontSize="16">Ramię:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Arm}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="16">Przedramię:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.ForeArm}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="16">Nadgarstek:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Wrist}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                     <Label FontFamily="Global Monospace" FontSize="16">Klatka piersiowa:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Chest}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="16">Talia:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Waist}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="16">Biodra:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Hips}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
                     <Label FontFamily="Global Monospace" FontSize="16">Udo:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Thigh}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="16">Łydka:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Calf}"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="16">Staw skokowy:</Label>
-                    <Label/>
+                    <Label Content="{Binding UserData.Ankle}"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

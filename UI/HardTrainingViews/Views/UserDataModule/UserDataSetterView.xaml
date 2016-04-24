@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HardTrainingViews.Views.UserDataModule"
         mc:Ignorable="d"
         Title="UserDataSetterView" Height="300" Width="380"
-        DataContext="{Binding Source={StaticResource Locator}, Path=UserDataModule}">
+        DataContext="{Binding UserDataModule, Source={StaticResource Locator}}">
     <Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <StackPanel Orientation="Vertical" Width="160">
@@ -62,7 +62,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="153">Łydka:</Label>
-                    <TextBox Text="{Binding UserData., Mode=OneWayToSource}" Width="45"/>
+                    <TextBox Text="{Binding UserData.Calf, Mode=OneWayToSource}" Width="45"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label FontFamily="Global Monospace" FontSize="14" Width="153">Staw skokowy:</Label>

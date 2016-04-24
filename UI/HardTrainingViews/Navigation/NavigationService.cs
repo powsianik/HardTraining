@@ -11,6 +11,14 @@ namespace HardTrainingViews.Navigation
 
         public event NavigatingCancelEventHandler Navigating;
 
+        public void Back()
+        {
+            if (CheckIfExistNavigationWindow())
+            {
+                navigationWindow.GoBack();
+            }
+        }
+
         public void NavigateTo(Page page)
         {
             if (CheckIfExistNavigationWindow())

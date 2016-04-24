@@ -41,8 +41,6 @@ namespace HardTrainingViews.VMLocator
         {
             this.iocConfig = new IocContainerConfig();
             ServiceLocator.SetLocatorProvider(() => new UnityServiceLocator(this.iocConfig.GetPreparingContainer()));
-
-            Messenger.Default.Register<OpenViewMessage>(this, this.ViewTransition);
         }
 
         public LoggerViewModel Logger => ServiceLocator.Current.GetInstance<LoggerViewModel>();
@@ -71,7 +69,7 @@ namespace HardTrainingViews.VMLocator
                 this.iocConfig.Dispose();
             }
         }
-
+        /*
         private void ViewTransition(OpenViewMessage msg)
         {
             switch (msg.TypeOfViewToOpen)
@@ -87,5 +85,10 @@ namespace HardTrainingViews.VMLocator
                     break;
             }
         }
+
+        private void BackToView(BackToRecentViewMessage msg)
+        {
+            ServiceLocator.Current.GetInstance<ISimpleNavigationService>().Back();
+        }*/
     }
 }

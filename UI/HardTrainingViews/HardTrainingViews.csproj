@@ -134,6 +134,7 @@
     <Compile Include="Views\LoggerModule\UserControls\ProfileOperationsAssistant.xaml.cs">
       <DependentUpon>ProfileOperationsAssistant.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VMLocator\ViewsSwitcher.cs" />
     <Page Include="Resources\Core.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
