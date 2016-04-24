@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HardTrainingViewsModel.UserDataModule;
 
 namespace HardTrainingViews.Views.UserDataModule
 {
@@ -19,9 +20,15 @@ namespace HardTrainingViews.Views.UserDataModule
     /// </summary>
     public partial class UserDataSetterView : Page
     {
-        public UserDataSetterView()
+        public UserDataSetterView(short profileId)
         {
             InitializeComponent();
+
+            var viewModel = this.DataContext as UserDataViewModel;
+            if (viewModel != null)
+            {
+                viewModel.IdOfProfile = profileId;
+            }
         }
     }
 }

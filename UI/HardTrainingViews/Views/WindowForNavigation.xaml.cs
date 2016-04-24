@@ -11,13 +11,13 @@ namespace HardTrainingViews.Views
     /// </summary>
     public partial class WindowForNavigation : NavigationWindow
     {
-        public WindowForNavigation()
+        public WindowForNavigation(short profileId)
         {
             InitializeComponent();
 
             Application.Current.MainWindow = this;
 
-            Messenger.Default.Send(new OpenViewMessage(TypesOfViews.CommonViewModule));
+            Messenger.Default.Send(new OpenViewMessage(TypesOfViews.CommonViewModule, profileId));
         }
 
     }

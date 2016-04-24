@@ -4,8 +4,8 @@ using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using HardTrainingViews.VMLocator;
 using HardTrainingCore.Messages;
-using HardTrainingViews.Views.UserDataModule;
-using HardTrainingViewsModel.UserDataModule;
+using HardTrainingViewsModel.CommonModule;
+
 
 namespace HardTrainingViews.Views.CommonModule
 {
@@ -14,25 +14,15 @@ namespace HardTrainingViews.Views.CommonModule
     /// </summary>
     public partial class CommonWindow : Page
     {
-        public CommonWindow()
+        public CommonWindow(short profileId)
         {
             InitializeComponent();
 
-            Messenger.Default.Register<ChangePageInCommonViewMessage>(this, this.OpenView);
-        }
-
-        private void OpenView(ChangePageInCommonViewMessage msg)
-        {
-            if (msg.TypeOfPageViewToOpen == TypesOfViews.UserData)
+            this.ShowsNavigationUI = false;
+            var viewModel = this.DataContext as CommonModuleViewModel;
+            if (viewModel != null)
             {
-                /*
-                this.Content = new UserDataView();
-                var vm = ((UserDataView) this.Content).DataContext as UserDataViewModel;
-                if (vm != null)
-                {
-                    vm.IdOfProfile = msg.ProfileId;
-                }
-                */
+                viewModel.IdOfProfile = profileId;
             }
         }
     }

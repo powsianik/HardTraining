@@ -16,6 +16,8 @@ using System;
 using GalaSoft.MvvmLight.Messaging;
 using HardTrainingCore.Messages;
 using HardTrainingViews.Navigation;
+using HardTrainingViews.Views.CommonModule;
+using HardTrainingViews.Views.UserDataModule;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
 using HardTrainingViewsModel.UserDataModule;
@@ -75,13 +77,13 @@ namespace HardTrainingViews.VMLocator
             switch (msg.TypeOfViewToOpen)
             {
                 case TypesOfViews.CommonViewModule:
-                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new Uri("../Views/CommonModule/CommonWindow.xaml", UriKind.Relative));
+                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new CommonWindow(msg.ProfileId));
                     break;
                 case TypesOfViews.UserData:
-                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new Uri("../Views/UserDataModule/UserDataView.xaml", UriKind.Relative));
+                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new UserDataView(msg.ProfileId));
                     break;
                 case TypesOfViews.UserDataSetter:
-                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new Uri("../Views/UserDataModule/UserDataSetterView.xaml", UriKind.Relative));
+                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new UserDataSetterView(msg.ProfileId));
                     break;
             }
         }

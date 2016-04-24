@@ -124,7 +124,7 @@
     </ApplicationDefinition>
     <Compile Include="IocContainerConfig.cs" />
     <Compile Include="Navigation\ISimpleNavigationService.cs" />
-    <Compile Include="Navigation\NavigationService2.cs" />
+    <Compile Include="Navigation\NavigationService.cs" />
     <Compile Include="Views\LoggerModule\LoggerView.xaml.cs">
       <DependentUpon>LoggerView.xaml</DependentUpon>
     </Compile>

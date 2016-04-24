@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Controls;
 using System.Windows.Navigation;
 
 namespace HardTrainingViews.Navigation
@@ -7,5 +8,6 @@ namespace HardTrainingViews.Navigation
     {
         event NavigatingCancelEventHandler Navigating;
         void NavigateTo(Uri pageUri);
+        void NavigateTo(Page page);
     }
 }

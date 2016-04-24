@@ -70,7 +70,8 @@ namespace HardTrainingViews
 
         private void SetUpNavigation()
         {
-            this.iocContainer.RegisterType<ISimpleNavigationService, NavigationService>(new ContainerControlledLifetimeManager());
+            this.iocContainer.RegisterType<ISimpleNavigationService, NavigationService>
+                (new ContainerControlledLifetimeManager());
         }
     }
 }

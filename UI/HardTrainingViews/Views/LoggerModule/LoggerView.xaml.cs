@@ -38,16 +38,9 @@ namespace HardTrainingViews.Views.LoggerModule
             }
             else if (msg.TypeOfViewToOpen == TypesOfViews.NavigationWindow)
             {
-                var view = new WindowForNavigation();
+                var view = new WindowForNavigation(msg.ProfileId);
+               
                 view.Show();
-
-                /*
-                var vm = view.DataContext as CommonModuleViewModel;
-                if (vm != null)
-                {
-                    vm.IdOfProfile = msg.ProfileId;
-                }*/
-
                 this.Close();
             }
         }

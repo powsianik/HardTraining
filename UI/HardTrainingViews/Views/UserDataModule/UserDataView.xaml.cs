@@ -11,28 +11,14 @@ namespace HardTrainingViews.Views.UserDataModule
     /// </summary>
     public partial class UserDataView : Page
     {
-        public UserDataView()
+        public UserDataView(short profileId)
         {
             InitializeComponent();
 
-            Messenger.Default.Register<OpenViewMessage>(this, this.OpenView);
-        }
-
-        private void OpenView(OpenViewMessage msg)
-        {
-            if (msg.TypeOfViewToOpen == TypesOfViews.UserDataSetter)
+            var viewModel = this.DataContext as UserDataViewModel;
+            if (viewModel != null)
             {
-                /*
-                var view = new UserDataSetterView();
-
-                var vm = ServiceLocator.Current.GetInstance(typeof (UserDataViewModel)) as UserDataViewModel;
-                if (vm != null)
-                {
-                    vm.IdOfProfile = msg.ProfileId;
-                }
-
-                view.Show();
-                */
+                viewModel.IdOfProfile = profileId;
             }
         }
     }
