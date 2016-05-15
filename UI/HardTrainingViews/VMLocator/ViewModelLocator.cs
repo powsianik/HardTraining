@@ -13,11 +13,6 @@
 */
 
 using System;
-using GalaSoft.MvvmLight.Messaging;
-using HardTrainingCore.Messages;
-using HardTrainingViews.Navigation;
-using HardTrainingViews.Views.CommonModule;
-using HardTrainingViews.Views.UserDataModule;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
 using HardTrainingViewsModel.UserDataModule;
@@ -34,6 +29,8 @@ namespace HardTrainingViews.VMLocator
     {
         private readonly IocContainerConfig iocConfig;
 
+        private UserDataViewModel userDataViewModel;
+
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
         /// </summary>
@@ -49,7 +46,18 @@ namespace HardTrainingViews.VMLocator
 
         public CommonModuleViewModel CommonModule => ServiceLocator.Current.GetInstance<CommonModuleViewModel>();
 
-        public UserDataViewModel UserDataModule => ServiceLocator.Current.GetInstance<UserDataViewModel>(); 
+        public UserDataViewModel UserDataModule
+        {
+            get
+            {
+                if (this.userDataViewModel == null)
+                {
+                    this.userDataViewModel = ServiceLocator.Current.GetInstance<UserDataViewModel>();
+                }
+
+                return this.userDataViewModel;
+            }
+        }
 
         public static void Cleanup()
         {
@@ -69,26 +77,5 @@ namespace HardTrainingViews.VMLocator
                 this.iocConfig.Dispose();
             }
         }
-        /*
-        private void ViewTransition(OpenViewMessage msg)
-        {
-            switch (msg.TypeOfViewToOpen)
-            {
-                case TypesOfViews.CommonViewModule:
-                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new CommonWindow(msg.ProfileId));
-                    break;
-                case TypesOfViews.UserData:
-                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new UserDataView(msg.ProfileId));
-                    break;
-                case TypesOfViews.UserDataSetter:
-                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new UserDataSetterView(msg.ProfileId));
-                    break;
-            }
-        }
-
-        private void BackToView(BackToRecentViewMessage msg)
-        {
-            ServiceLocator.Current.GetInstance<ISimpleNavigationService>().Back();
-        }*/
     }
 }

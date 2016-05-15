@@ -3,10 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HardTrainingViews.Views.UserDataModule"
+        xmlns:vmlocator="clr-namespace:HardTrainingViews.VMLocator"
         mc:Ignorable="d"
         Title="UserDataSetterView" Height="300" Width="380"
         DataContext="{Binding UserDataModule, Source={StaticResource Locator}}">
+
     <Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <StackPanel Orientation="Vertical" Width="160">

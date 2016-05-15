@@ -5,7 +5,6 @@
 
     <Application.Resources>
         <ResourceDictionary>
-            <vmLocator:ViewModelLocator x:Key="Locator"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Core.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/LanguageEn.xaml"/>

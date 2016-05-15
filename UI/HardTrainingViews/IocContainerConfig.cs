@@ -8,11 +8,9 @@ using EntityFrameworkDomain.Repository.Concrete.Logger;
 using EntityFrameworkDomain.Repository.Concrete.UserDataModule;
 using EntityFrameworkDomain.Repository.Interfaces.Logger;
 using EntityFrameworkDomain.Repository.Interfaces.UserDataModule;
-using GalaSoft.MvvmLight;
 using HardTrainingPoco.POCO.Logger;
 using HardTrainingServices.Logger;
 using HardTrainingViews.Navigation;
-using HardTrainingViews.VMLocator;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
 using HardTrainingViewsModel.UserDataModule;
@@ -32,7 +30,8 @@ namespace HardTrainingViews
 
         private void Register()
         {
-            this.SetUpNavigation();
+            this.iocContainer.RegisterType<ISimpleNavigationService, NavigationService>
+               (new ContainerControlledLifetimeManager());
 
             this.iocContainer.RegisterType<HardTrainingMainContext>(new ContainerControlledLifetimeManager());
             this.iocContainer.RegisterType<DbContext, HardTrainingMainContext>();
@@ -66,12 +65,6 @@ namespace HardTrainingViews
         public void Dispose()
         {
             this.iocContainer.Dispose();
-        }
-
-        private void SetUpNavigation()
-        {
-            this.iocContainer.RegisterType<ISimpleNavigationService, NavigationService>
-                (new ContainerControlledLifetimeManager());
         }
     }
 }

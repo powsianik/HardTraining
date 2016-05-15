@@ -4,6 +4,8 @@ using System.Windows;
 using GalaSoft.MvvmLight.Threading;
 using HardTrainingViews.Views;
 using HardTrainingViews.VMLocator;
+using HardTrainingViewsModel.UserDataModule;
+using Microsoft.Practices.ServiceLocation;
 
 namespace HardTrainingViews
 {
