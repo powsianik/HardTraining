@@ -11,6 +11,7 @@ using EntityFrameworkDomain.Repository.Interfaces.UserDataModule;
 using HardTrainingPoco.POCO.Logger;
 using HardTrainingServices.Logger;
 using HardTrainingViews.Navigation;
+using HardTrainingViewsModel.AnalyserModule;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
 using HardTrainingViewsModel.UserDataModule;
@@ -51,6 +52,8 @@ namespace HardTrainingViews
             this.iocContainer.RegisterType<ProfileManagerViewModel>();
 
             this.iocContainer.RegisterType<UserDataViewModel>(new ContainerControlledLifetimeManager());
+
+            this.iocContainer.RegisterType<DataAnalyserViewModel>();
 
             this.iocContainer.RegisterType<CommonModuleViewModel>();
         }

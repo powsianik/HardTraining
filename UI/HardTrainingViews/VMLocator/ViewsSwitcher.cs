@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using HardTrainingCore.Messages;
 using HardTrainingViews.Navigation;
+using HardTrainingViews.Views.AnalyserModule;
 using HardTrainingViews.Views.CommonModule;
 using HardTrainingViews.Views.UserDataModule;
 using Microsoft.Practices.ServiceLocation;
@@ -27,6 +28,9 @@ namespace HardTrainingViews.VMLocator
                     break;
                 case TypesOfViews.UserDataSetter:
                     ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new UserDataSetterView(msg.ProfileId));
+                    break;
+                case TypesOfViews.AnalyserOfUserDataInTime:
+                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new AnalyserOfUserDataView(msg.ProfileId));
                     break;
             }
         }

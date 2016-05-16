@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using EntityFrameworkDomain.Repository.Interfaces.UserDataModule;
 using GalaSoft.MvvmLight;
@@ -20,10 +21,13 @@ namespace HardTrainingViewsModel.UserDataModule
             this.repository = repo;
 
             this.OpenUserDataSetterCommand = new RelayCommand(this.OpenDataSetter);
+            this.OpenAnalyserInTimeCommand = new RelayCommand(this.OpenAnalyserInTime);
             this.SaveUserDataCommand = new RelayCommand(this.SaveUserData);
         }
 
         public ICommand OpenUserDataSetterCommand { get; private set; }
+
+        public ICommand OpenAnalyserInTimeCommand { get; private set; }
 
         public ICommand SaveUserDataCommand { get; private set; }
 
@@ -58,6 +62,11 @@ namespace HardTrainingViewsModel.UserDataModule
         private void OpenDataSetter()
         {
             MessengerInstance.Send(new OpenViewMessage(TypesOfViews.UserDataSetter, this.IdOfProfile));
+        }
+
+        private void OpenAnalyserInTime()
+        {
+            MessengerInstance.Send(new OpenViewMessage(TypesOfViews.AnalyserOfUserDataInTime, this.IdOfProfile));
         }
 
         private void SaveUserData()

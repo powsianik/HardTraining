@@ -13,6 +13,7 @@
 */
 
 using System;
+using HardTrainingViewsModel.AnalyserModule;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
 using HardTrainingViewsModel.UserDataModule;
@@ -45,6 +46,8 @@ namespace HardTrainingViews.VMLocator
         public ProfileManagerViewModel ProfileManager => ServiceLocator.Current.GetInstance<ProfileManagerViewModel>();
 
         public CommonModuleViewModel CommonModule => ServiceLocator.Current.GetInstance<CommonModuleViewModel>();
+
+        public DataAnalyserViewModel AnalyserModule => ServiceLocator.Current.GetInstance<DataAnalyserViewModel>();
 
         public UserDataViewModel UserDataModule
         {

@@ -7,6 +7,7 @@
         CommonViewModule,
         UserData,
         UserDataSetter,
+        AnalyserOfUserDataInTime,
         NavigationWindow
     }
 }
