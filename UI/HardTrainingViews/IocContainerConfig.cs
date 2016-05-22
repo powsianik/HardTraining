@@ -4,8 +4,10 @@ using EntityFrameworkDomain.Context.Concrete;
 using EntityFrameworkDomain.Context.Interfaces;
 using EntityFrameworkDomain.Repository;
 using EntityFrameworkDomain.Repository.Concrete;
+using EntityFrameworkDomain.Repository.Concrete.Analyser;
 using EntityFrameworkDomain.Repository.Concrete.Logger;
 using EntityFrameworkDomain.Repository.Concrete.UserDataModule;
+using EntityFrameworkDomain.Repository.Interfaces.Analyser;
 using EntityFrameworkDomain.Repository.Interfaces.Logger;
 using EntityFrameworkDomain.Repository.Interfaces.UserDataModule;
 using HardTrainingPoco.POCO.Logger;
@@ -40,6 +42,7 @@ namespace HardTrainingViews
 
             this.iocContainer.RegisterType<ILoggerRepo, LoggerRepository>();
             this.iocContainer.RegisterType<IUserDataRepo, UserDataRepository>();
+            this.iocContainer.RegisterType<IAnalyserRepository, AnalyserRepository>();
 
             this.iocContainer.RegisterType<IReadAll<Profile>, EntityReader<Profile>>();
             this.iocContainer.RegisterType<ProfileChecker>();

@@ -1,27 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using EntityFrameworkDomain.Repository.Interfaces.Analyser;
 using GalaSoft.MvvmLight;
+using HardTrainingPoco.POCO.UserDataModule;
 using HardTrainingViewsModel.Interfaces;
-using OxyPlot;
-using OxyPlot.Series;
 
 
 namespace HardTrainingViewsModel.AnalyserModule
 {
     public class DataAnalyserViewModel : ViewModelBase, IContainId
     {
-        public DataAnalyserViewModel()
+        private IAnalyserRepository repo;
+        private IEnumerable<UserData> userData; 
+
+        public DataAnalyserViewModel(IAnalyserRepository repo)
         {
-            this.PrepareGraph();
+            this.repo = repo;   
         }
 
-        public short IdOfProfile { get; set; }
+        public short IdOfProfile {private get; set; }
 
-        public PlotModel ModelOfGraph { get; private set; }
+        public List<DataForChart> DataForChart { get; private set; }
 
-        private void PrepareGraph()
+        public void PrepareWeightDataForChart()
         {
-            this.ModelOfGraph = new PlotModel() {Title = "asdsa"};
-            this.ModelOfGraph.Series.Add(new FunctionSeries(Math.Cos, 0, 10, 0.1, "cos(x)"));;
+            this.userData = repo.GetUserData(this.IdOfProfile);
+
+            this.DataForChart = new List<DataForChart>(10);
+
+            foreach (var data in this.userData)
+            {
+                this.DataForChart.Add(new DataForChart(data.Weight, data.MeasureDate.ToOADate()));
+            }
         }
     }
 }

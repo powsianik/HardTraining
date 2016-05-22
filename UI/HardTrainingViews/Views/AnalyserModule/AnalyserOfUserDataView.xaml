@@ -4,13 +4,25 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:HardTrainingViews.Views.AnalyserModule"
-      xmlns:wpf="http://oxyplot.org/wpf"
+      xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
       Title="AnalyserOfUserDataView"
       DataContext="{Binding Source={StaticResource Locator}, Path=AnalyserModule}">
 
-    <Grid>
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <d3:ChartPlotter x:Name="plotter" Grid.Column="0" >
+            <d3:HorizontalAxisTitle Content="Data pomiaru"/>
+            <d3:VerticalAxisTitle Content="Wielkość pomiaru"/>
+        </d3:ChartPlotter>
         
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Button Content="Pokaz wykres" Click="CreateChart"></Button>
+        </StackPanel>
     </Grid>
 </Page>

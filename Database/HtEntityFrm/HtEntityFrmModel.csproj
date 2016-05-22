@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EntityFrameworkDomain</RootNamespace>
     <AssemblyName>EntityFrameworkDomain</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publish\</PublishUrl>
@@ -72,10 +72,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +90,7 @@
       <DependentUpon>201604241133151_AddPositionToUserData.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Repository\Concrete\Analyser\AnalyserRepository.cs" />
     <Compile Include="Repository\Concrete\EntityCreator.cs" />
     <Compile Include="Repository\Concrete\EntityDeleter.cs" />
     <Compile Include="Repository\Concrete\EntityReader.cs" />
@@ -103,6 +100,7 @@
     <Compile Include="Repository\Concrete\UserDataModule\UserDataRepository.cs" />
     <Compile Include="Repository\ICreate.cs" />
     <Compile Include="Repository\IDelete.cs" />
+    <Compile Include="Repository\Interfaces\Analyser\IAnalyserRepository.cs" />
     <Compile Include="Repository\Interfaces\IGenericRepo.cs" />
     <Compile Include="Repository\Interfaces\Logger\ILoggerRepo.cs" />
     <Compile Include="Repository\Interfaces\UserDataModule\IUserDataRepo.cs" />
