@@ -26,15 +26,16 @@ namespace HardTrainingViews.Views.AnalyserModule
             if (viewModel != null)
             {
                 viewModel.IdOfProfile = profileId;
-                viewModel.PrepareDataForChart();
             }
         }
 
-        private void CreateChart(object seder, RoutedEventArgs e)
+        public void CreateChart(object seder, RoutedEventArgs e)
         {
             var viewModel = this.DataContext as DataAnalyserViewModel;
             if (viewModel != null)
             {
+                viewModel.PrepareDataForChart(((ComboBoxItem)this.cbxDataToAnalyse.SelectedValue).Content.ToString());
+
                 var ds = new EnumerableDataSource<DataForChart>(viewModel.DataForChart);
 
                 ds.SetXMapping(x => x.DateOfMeasurment);

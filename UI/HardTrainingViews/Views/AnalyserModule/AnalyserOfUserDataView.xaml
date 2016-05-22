@@ -22,6 +22,9 @@
         </d3:ChartPlotter>
         
         <StackPanel Grid.Column="1" Orientation="Vertical">
+            <ComboBox x:Name="cbxDataToAnalyse">
+                <ComboBoxItem Content="Waga"></ComboBoxItem>
+            </ComboBox>
             <Button Content="Pokaz wykres" Click="CreateChart"></Button>
         </StackPanel>
     </Grid>

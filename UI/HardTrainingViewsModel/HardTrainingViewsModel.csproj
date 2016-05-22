@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalyserModule\DataAnalyserViewModel.cs" />
-    <Compile Include="AnalyserModule\DataForChart.cs" />
     <Compile Include="CommonModule\CommonModuleViewModel.cs" />
     <Compile Include="Interfaces\IContainId.cs" />
     <Compile Include="Logger\LoggerViewModel.cs" />

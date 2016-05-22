@@ -41,11 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAnalyser\IDataForAnalyseGetter.cs" />
     <Compile Include="Logger\IProfileCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DataAnalyser\" />
+    <ProjectReference Include="..\..\Database\HardTrainingPoco\HardTrainingPoco.csproj">
+      <Project>{49e96329-f639-441f-b325-1e2c5f6a262a}</Project>
+      <Name>HardTrainingPoco</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

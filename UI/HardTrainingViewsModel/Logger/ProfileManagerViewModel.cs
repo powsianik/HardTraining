@@ -77,18 +77,6 @@ namespace HardTrainingViewsModel.Logger
         private void CreateProfile()
         {
             this.profileCreator.CreateProfile(this.ProfileName, this.ProfilePassword);
-            /*
-            Profile newProfile = new Profile()
-            {
-                CreationDate = DateTime.Now,
-                Name = this.ProfileName,
-                Password = this.ProfilePassword
-            };
-            */
-            //this._repo.AddProfile(newProfile);
-            //this._repo.SaveChanges();
-
-            //this.Profiles.Add(newProfile);
 
             this.RaisePropertyChanged(() => Profiles);     
             this.IsAssistantVisisble = false;
@@ -99,8 +87,7 @@ namespace HardTrainingViewsModel.Logger
             if (this.CheckAreProvidedDataAndSelectedDataCorrect())
             {
                 this.profileDeleter.Delete(this.SelectedProfile.Name, this.SelectedProfile.Password);
-                //this._repo.DeleteProfile(this.SelectedProfile);
-                //this._repo.SaveChanges();
+
                 this.Profiles.Remove(this.SelectedProfile);
 
                 this.RaisePropertyChanged(() => Profiles);
