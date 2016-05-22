@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using EntityFrameworkDomain.Repository.Interfaces.Analyser;
+using HardTrainingPoco.POCO.AnalyserModule;
 using HardTrainingServiceInterfaces.DataAnalyser;
-using HardTrainingViewsModel.AnalyserModule;
 
-namespace HardTrainingServices.DataAnalyser
+namespace HardTrainingServices.DataAnalyser.ForUserData
 {
-    public class WeightForAnalyseGetter : IDataForAnalyseGetter
-    { 
+    public class ArmForAnalyseGetter : IDataForAnalyseGetter
+    {
         private IAnalyserRepository repo;
 
-        public WeightForAnalyseGetter(IAnalyserRepository repo)
+        public ArmForAnalyseGetter(IAnalyserRepository repo)
         {
             this.repo = repo;
         }
@@ -23,7 +22,7 @@ namespace HardTrainingServices.DataAnalyser
             var results = new List<DataForChart>(userData.Count());
             foreach (var data in userData)
             {
-                results.Add(new DataForChart(data.Weight, data.MeasureDate.ToOADate()));
+                results.Add(new DataForChart(data.Arm, data.MeasureDate.ToOADate()));
             }
 
             return results;

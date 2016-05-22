@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HardTrainingViewsModel.AnalyserModule
+﻿namespace HardTrainingPoco.POCO.AnalyserModule
 {
     public class DataForChart
     {

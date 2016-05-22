@@ -1,4 +1,4 @@
-﻿namespace HardTrainingCore.Messages
+﻿namespace HardTrainingCore.Enums
 {
     public enum TypesOfViews
     {

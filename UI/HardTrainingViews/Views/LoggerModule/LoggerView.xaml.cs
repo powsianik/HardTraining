@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows;
 using GalaSoft.MvvmLight.Messaging;
+using HardTrainingCore.Enums;
 using HardTrainingCore.Messages;
 using HardTrainingViews.Views.CommonModule;
-using HardTrainingViews.Views.Logger;
 using HardTrainingViews.VMLocator;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;

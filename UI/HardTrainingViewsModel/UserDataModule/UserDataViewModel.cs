@@ -4,6 +4,7 @@ using System.Windows.Input;
 using EntityFrameworkDomain.Repository.Interfaces.UserDataModule;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+using HardTrainingCore.Enums;
 using HardTrainingCore.Messages;
 using HardTrainingPoco.POCO.UserDataModule;
 using HardTrainingViewsModel.Interfaces;

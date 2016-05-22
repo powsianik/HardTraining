@@ -23,9 +23,12 @@
         
         <StackPanel Grid.Column="1" Orientation="Vertical">
             <ComboBox x:Name="cbxDataToAnalyse">
-                <ComboBoxItem Content="Waga"></ComboBoxItem>
+                <ComboBoxItem Content="{DynamicResource Weight}"></ComboBoxItem>
+                <ComboBoxItem Content="{DynamicResource Arm}"></ComboBoxItem>
+                <ComboBoxItem Content="{DynamicResource Chest}"></ComboBoxItem>
             </ComboBox>
             <Button Content="Pokaz wykres" Click="CreateChart"></Button>
+            <Button Content="Wróć" Command="{Binding BackToRecentViewCommand}"></Button>
         </StackPanel>
     </Grid>
 </Page>

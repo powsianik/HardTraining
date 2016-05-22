@@ -1,4 +1,6 @@
 ﻿
+using HardTrainingCore.Enums;
+
 namespace HardTrainingCore.Messages
 {
     public class OpenViewMessage

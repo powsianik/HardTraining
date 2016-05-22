@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using HardTrainingPoco.POCO.AnalyserModule;
 using HardTrainingViewsModel.AnalyserModule;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
@@ -44,6 +45,7 @@ namespace HardTrainingViews.Views.AnalyserModule
                 var line = new LineGraph(ds);
                 line.LinePen = new Pen(Brushes.Blue, 2);
 
+                plotter.Children.RemoveAllOfType(typeof(LineGraph));
                 plotter.Children.Add(line);
                 plotter.FitToView();
             } 

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace HardTrainingViews.Views.Logger
+namespace HardTrainingViews.Views.LoggerModule
 {
     /// <summary>
     /// Interaction logic for ProfileManagerView.xaml

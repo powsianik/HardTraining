@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using HardTrainingViewsModel.AnalyserModule;
+using HardTrainingPoco.POCO.AnalyserModule;
 
 namespace HardTrainingServiceInterfaces.DataAnalyser
 {

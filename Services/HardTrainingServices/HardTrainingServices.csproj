@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAnalyser\WeightForAnalyseGetter.cs" />
+    <Compile Include="DataAnalyser\ForUserData\ArmForAnalyseGetter.cs" />
+    <Compile Include="DataAnalyser\ForUserData\ChestForAnalyseGetter.cs" />
+    <Compile Include="DataAnalyser\ForUserData\WeightForAnalyseGetter.cs" />
     <Compile Include="Logger\ProfileFinder.cs" />
     <Compile Include="Logger\SimpleProfileCreator.cs" />
     <Compile Include="Logger\ProfileChecker.cs" />

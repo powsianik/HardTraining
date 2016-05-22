@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Navigation;
 using GalaSoft.MvvmLight.Messaging;
+using HardTrainingCore.Enums;
 using HardTrainingCore.Messages;
 
 namespace HardTrainingViews.Views

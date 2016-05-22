@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using HardTrainingCore.Enums;
 using HardTrainingCore.Messages;
 using HardTrainingViews.Navigation;
 using HardTrainingViews.Views.AnalyserModule;

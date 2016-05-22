@@ -4,4 +4,10 @@
 
     <system:String x:Key="Username">Username:</system:String>
     <system:String x:Key="Password">Password:</system:String>
+
+    <system:String x:Key="Weight">Weight</system:String>
+    <system:String x:Key="Arm">Arm</system:String>
+    <system:String x:Key="Chest">Chest</system:String>
+    <system:String x:Key="Hips">Hips</system:String>
+    <system:String x:Key="Thigh">Thigh</system:String>
 </ResourceDictionary>
