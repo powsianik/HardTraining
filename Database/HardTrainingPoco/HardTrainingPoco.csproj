@@ -44,6 +44,10 @@
   <ItemGroup>
     <Compile Include="POCO\Logger\Profile.cs" />
     <Compile Include="POCO\AnalyserModule\DataForChart.cs" />
+    <Compile Include="POCO\PlanModule\Exercise.cs" />
+    <Compile Include="POCO\PlanModule\KindOfExercise.cs" />
+    <Compile Include="POCO\PlanModule\TrainingDay.cs" />
+    <Compile Include="POCO\PlanModule\TrainingPlan.cs" />
     <Compile Include="POCO\UserDataModule\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

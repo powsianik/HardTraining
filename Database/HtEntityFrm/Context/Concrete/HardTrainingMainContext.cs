@@ -2,6 +2,7 @@
 using System.Data.Entity.ModelConfiguration.Conventions;
 using EntityFrameworkDomain.Context.Interfaces;
 using HardTrainingPoco.POCO.Logger;
+using HardTrainingPoco.POCO.PlanModule;
 using HardTrainingPoco.POCO.UserDataModule;
 
 namespace EntityFrameworkDomain.Context.Concrete
@@ -16,6 +17,9 @@ namespace EntityFrameworkDomain.Context.Concrete
         /*Tables:*/
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<UserData> UserDatas { get; set; }
+
+        public DbSet<KindOfExercise> KindOfExercises { get; set; }
+        public DbSet<Exercise> Exercises { get; set; }
 
         public static HardTrainingMainContext Create()
         {

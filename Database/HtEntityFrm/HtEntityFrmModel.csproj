@@ -89,6 +89,14 @@
     <Compile Include="Migrations\201604241133151_AddPositionToUserData.Designer.cs">
       <DependentUpon>201604241133151_AddPositionToUserData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605291048053_Exercises.cs" />
+    <Compile Include="Migrations\201605291048053_Exercises.Designer.cs">
+      <DependentUpon>201605291048053_Exercises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606121448423_workOnPlan1.cs" />
+    <Compile Include="Migrations\201606121448423_workOnPlan1.Designer.cs">
+      <DependentUpon>201606121448423_workOnPlan1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\Concrete\Analyser\AnalyserRepository.cs" />
     <Compile Include="Repository\Concrete\EntityCreator.cs" />
@@ -139,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604241133151_AddPositionToUserData.resx">
       <DependentUpon>201604241133151_AddPositionToUserData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605291048053_Exercises.resx">
+      <DependentUpon>201605291048053_Exercises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606121448423_workOnPlan1.resx">
+      <DependentUpon>201606121448423_workOnPlan1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

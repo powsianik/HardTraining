@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using HardTrainingPoco.POCO.PlanModule;
 using HardTrainingPoco.POCO.UserDataModule;
 
 namespace HardTrainingPoco.POCO.Logger
@@ -30,5 +31,6 @@ namespace HardTrainingPoco.POCO.Logger
 
         public virtual ICollection<UserData> UserBasicData { get; private set; }
 
+        public virtual ICollection<TrainingPlan> TrainingPlans { get; private set; } 
     }
 }

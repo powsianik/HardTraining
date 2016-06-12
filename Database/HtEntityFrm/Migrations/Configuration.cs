@@ -1,3 +1,5 @@
+using HardTrainingPoco.POCO.PlanModule;
+
 namespace EntityFrameworkDomain.Migrations
 {
     using System;
@@ -26,6 +28,9 @@ namespace EntityFrameworkDomain.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.KindOfExercises.AddOrUpdate(new KindOfExercise() {Name = "Aerobowe", Description = "Jest to æwiczenie tlenowe, poprawiaj¹ce wydolnoœæ."});
+            context.KindOfExercises.AddOrUpdate(new KindOfExercise() { Name = "Oporowe", Description = "Jest to æwiczenie si³owe, poprawiaj¹ce wydolnoœæ, si³ê i konsystencje miêœni."});
         }
     }
 }
