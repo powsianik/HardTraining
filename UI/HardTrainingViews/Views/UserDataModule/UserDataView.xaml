@@ -92,6 +92,7 @@
             <Label Visibility="{Binding IsUserDataNotExist, Converter={StaticResource VisiblityConverter}}" Foreground="Red">Dodaj swoje pierwsze pomiary</Label>
             <Button Content="Dodaj dane" Command="{Binding OpenUserDataSetterCommand}"/>
             <Button Content="Analizuj w czasie" Command="{Binding OpenAnalyserInTimeCommand}"/>
+            <Button Content="Wróć" VerticalAlignment="Bottom" Margin="0,300" Command="{Binding GoToViewBeforeCommand}"></Button>
         </StackPanel>
     </Grid>
 </Page>

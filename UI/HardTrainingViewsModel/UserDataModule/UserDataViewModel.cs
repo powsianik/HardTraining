@@ -24,6 +24,7 @@ namespace HardTrainingViewsModel.UserDataModule
             this.OpenUserDataSetterCommand = new RelayCommand(this.OpenDataSetter);
             this.OpenAnalyserInTimeCommand = new RelayCommand(this.OpenAnalyserInTime);
             this.SaveUserDataCommand = new RelayCommand(this.SaveUserData);
+            this.GoToViewBeforeCommand = new RelayCommand(this.GoToViewBefore);
         }
 
         public ICommand OpenUserDataSetterCommand { get; private set; }
@@ -31,6 +32,8 @@ namespace HardTrainingViewsModel.UserDataModule
         public ICommand OpenAnalyserInTimeCommand { get; private set; }
 
         public ICommand SaveUserDataCommand { get; private set; }
+
+        public ICommand GoToViewBeforeCommand { get; private set; }
 
         public bool IsUserDataNotExist { get; private set; }
 
@@ -78,6 +81,11 @@ namespace HardTrainingViewsModel.UserDataModule
             this.repository.SaveUserData(this.UserData);
             this.repository.SaveChanges();
 
+            this.GoToViewBefore();
+        }
+
+        private void GoToViewBefore()
+        {
             MessengerInstance.Send(new BackToRecentViewMessage());
         }
     }

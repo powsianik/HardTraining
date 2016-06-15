@@ -71,6 +71,7 @@
                 </StackPanel>
                 
                 <Button Content="Zapisz" Command="{Binding SaveUserDataCommand}"></Button>
+                <Button Content="Anuluj" Command="{Binding GoToViewBeforeCommand}"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>
