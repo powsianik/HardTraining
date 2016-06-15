@@ -77,25 +77,13 @@
   <ItemGroup>
     <Compile Include="Context\Concrete\HardTrainingMainContext.cs" />
     <Compile Include="Context\Interfaces\IHardTrainingContext.cs" />
-    <Compile Include="Migrations\201603251759376_First.cs" />
-    <Compile Include="Migrations\201603251759376_First.Designer.cs">
-      <DependentUpon>201603251759376_First.cs</DependentUpon>
+    <Compile Include="Migrations\201606151643136_start.cs" />
+    <Compile Include="Migrations\201606151643136_start.Designer.cs">
+      <DependentUpon>201606151643136_start.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604031253515_Second.cs" />
-    <Compile Include="Migrations\201604031253515_Second.Designer.cs">
-      <DependentUpon>201604031253515_Second.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201604241133151_AddPositionToUserData.cs" />
-    <Compile Include="Migrations\201604241133151_AddPositionToUserData.Designer.cs">
-      <DependentUpon>201604241133151_AddPositionToUserData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201605291048053_Exercises.cs" />
-    <Compile Include="Migrations\201605291048053_Exercises.Designer.cs">
-      <DependentUpon>201605291048053_Exercises.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201606121448423_workOnPlan1.cs" />
-    <Compile Include="Migrations\201606121448423_workOnPlan1.Designer.cs">
-      <DependentUpon>201606121448423_workOnPlan1.cs</DependentUpon>
+    <Compile Include="Migrations\201606151706252_second.cs" />
+    <Compile Include="Migrations\201606151706252_second.Designer.cs">
+      <DependentUpon>201606151706252_second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\Concrete\Analyser\AnalyserRepository.cs" />
@@ -139,20 +127,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603251759376_First.resx">
-      <DependentUpon>201603251759376_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606151643136_start.resx">
+      <DependentUpon>201606151643136_start.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604031253515_Second.resx">
-      <DependentUpon>201604031253515_Second.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604241133151_AddPositionToUserData.resx">
-      <DependentUpon>201604241133151_AddPositionToUserData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605291048053_Exercises.resx">
-      <DependentUpon>201605291048053_Exercises.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201606121448423_workOnPlan1.resx">
-      <DependentUpon>201606121448423_workOnPlan1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201606151706252_second.resx">
+      <DependentUpon>201606151706252_second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

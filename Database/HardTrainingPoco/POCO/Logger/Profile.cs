@@ -11,6 +11,7 @@ namespace HardTrainingPoco.POCO.Logger
         public Profile()
         {
             this.UserBasicData = new HashSet<UserData>();
+            this.TrainingPlans = new HashSet<TrainingPlan>();
         }
 
         [Key]

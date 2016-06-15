@@ -3,16 +3,16 @@ namespace EntityFrameworkDomain.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddPositionToUserData : DbMigration
+    public partial class second : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.UserData", "Calf", c => c.Short(nullable: false));
+            AlterColumn("dbo.UserData", "Weight", c => c.Single(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.UserData", "Calf");
+            AlterColumn("dbo.UserData", "Weight", c => c.Short(nullable: false));
         }
     }
 }

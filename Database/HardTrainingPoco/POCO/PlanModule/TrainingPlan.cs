@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using HardTrainingPoco.POCO.Logger;
 
 namespace HardTrainingPoco.POCO.PlanModule
@@ -10,7 +10,7 @@ namespace HardTrainingPoco.POCO.PlanModule
     {
         public TrainingPlan()
         {
-            
+            this.TrainingDays = new HashSet<TrainingDay>();
         }
 
         [Key]
@@ -19,7 +19,7 @@ namespace HardTrainingPoco.POCO.PlanModule
         [MaxLength(32)]
         public string Name { get; set; }
 
-        [MaxLength(256)]
+        [MaxLength(512)]
         public string Purpose { get; set; }
 
         [DataType(DataType.Date)]
@@ -28,8 +28,9 @@ namespace HardTrainingPoco.POCO.PlanModule
         [DataType(DataType.Date)]
         public DateTime EndDate { get; set; }
 
-        public short ProfileId { get; set; }
+        public short IdOfProfile { get; set; }
 
+        [ForeignKey("IdOfProfile")]
         public Profile Profile { get; set; }
 
         public virtual ICollection<TrainingDay> TrainingDays { get; private set; }

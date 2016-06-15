@@ -22,7 +22,7 @@ namespace HardTrainingPoco.POCO.UserDataModule
 
         public short Height { get; set; }
 
-        public short Weight { get; set; }
+        public float Weight { get; set; }
 
         public short Neck { get; set; }
 

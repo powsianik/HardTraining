@@ -1,4 +1,5 @@
-using HardTrainingPoco.POCO.PlanModule;
+using EntityFrameworkDomain.Context.Concrete;
+using HardTrainingPoco.POCO.Logger;
 
 namespace EntityFrameworkDomain.Migrations
 {
@@ -7,14 +8,14 @@ namespace EntityFrameworkDomain.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<EntityFrameworkDomain.Context.Concrete.HardTrainingMainContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<HardTrainingMainContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(EntityFrameworkDomain.Context.Concrete.HardTrainingMainContext context)
+        protected override void Seed(HardTrainingMainContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -28,9 +29,6 @@ namespace EntityFrameworkDomain.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-
-            context.KindOfExercises.AddOrUpdate(new KindOfExercise() {Name = "Aerobowe", Description = "Jest to æwiczenie tlenowe, poprawiaj¹ce wydolnoœæ."});
-            context.KindOfExercises.AddOrUpdate(new KindOfExercise() { Name = "Oporowe", Description = "Jest to æwiczenie si³owe, poprawiaj¹ce wydolnoœæ, si³ê i konsystencje miêœni."});
         }
     }
 }
