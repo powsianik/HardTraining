@@ -159,6 +159,21 @@
     <Compile Include="Views\LoggerModule\UserControls\ProfileOperationsAssistant.xaml.cs">
       <DependentUpon>ProfileOperationsAssistant.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PlanModule\PlanCreator\NavigatorWindow.xaml.cs">
+      <DependentUpon>NavigatorWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlanModule\PlanCreator\Pages\BasicPlanDataCreator.xaml.cs">
+      <DependentUpon>BasicPlanDataCreator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlanModule\PlanCreator\Pages\TrainingDaySelector.xaml.cs">
+      <DependentUpon>TrainingDaySelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlanModule\PlanCreator\UserConrols\DayToSelect.xaml.cs">
+      <DependentUpon>DayToSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PlanModule\PlanCreator\Windows\AddExercisesToTrainingDay.xaml.cs">
+      <DependentUpon>AddExercisesToTrainingDay.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VMLocator\ViewsSwitcher.cs" />
     <Page Include="Resources\Core.xaml">
       <SubType>Designer</SubType>
@@ -212,6 +227,26 @@
     <Page Include="Views\LoggerModule\UserControls\ProfileOperationsAssistant.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PlanModule\PlanCreator\NavigatorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlanModule\PlanCreator\Pages\BasicPlanDataCreator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlanModule\PlanCreator\Pages\TrainingDaySelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlanModule\PlanCreator\UserConrols\DayToSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PlanModule\PlanCreator\Windows\AddExercisesToTrainingDay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UserDataModule\UserDataSetterView.xaml">
       <SubType>Designer</SubType>

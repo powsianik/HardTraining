@@ -21,7 +21,6 @@ namespace HardTrainingViewsModel.Logger
         public LoggerViewModel(ProfileChecker profileChecker)
         {
             this.profileChecker = profileChecker;
-
             this.OpenProfileManagerCommand = new RelayCommand(this.OpenProfileManager);
             this.LogOnCommand = new RelayCommand(this.LogOn);
         }

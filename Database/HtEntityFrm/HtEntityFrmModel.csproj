@@ -93,6 +93,7 @@
     <Compile Include="Repository\Concrete\EntityUpdater.cs" />
     <Compile Include="Repository\Concrete\Exceptions\LoginOrPasswordIncorrectException.cs" />
     <Compile Include="Repository\Concrete\Logger\LoggerRepository.cs" />
+    <Compile Include="Repository\Concrete\Plan\TrainingPlanRepository.cs" />
     <Compile Include="Repository\Concrete\UserDataModule\UserDataRepository.cs" />
     <Compile Include="Repository\ICreate.cs" />
     <Compile Include="Repository\IDelete.cs" />
