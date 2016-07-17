@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HardTrainingViews.Views.PlanModule.PlanCreator.Windows"
         mc:Ignorable="d"
-        Title="AddExercisesToTrainingDay" Height="300" Width="300">
+        Title="AddExercisesToTrainingDay" Height="300" Width="512.113">
     <Grid>
-        
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="250" Margin="318,10,0,0" VerticalAlignment="Top" Width="178" BorderThickness="2"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,44,0,0" TextWrapping="Wrap" Text="Ilośc serii" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="10,72,0,0" TextWrapping="Wrap" Text="Ilośc powtórzeń" VerticalAlignment="Top" Width="152"/>
+        <Button x:Name="button" Content="Utwórz nowe ćwiczenie" HorizontalAlignment="Left" Margin="174,10,0,0" VerticalAlignment="Top" Width="139"/>
+        <Button x:Name="button_Copy" Content="Dodaj" HorizontalAlignment="Left" Margin="23,218,0,0" VerticalAlignment="Top" Width="261" Height="42"/>
+
     </Grid>
 </Window>
