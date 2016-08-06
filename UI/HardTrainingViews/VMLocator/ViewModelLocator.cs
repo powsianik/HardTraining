@@ -16,6 +16,7 @@ using System;
 using HardTrainingViewsModel.AnalyserModule;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
+using HardTrainingViewsModel.PlanModule;
 using HardTrainingViewsModel.UserDataModule;
 using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
@@ -48,6 +49,8 @@ namespace HardTrainingViews.VMLocator
         public CommonModuleViewModel CommonModule => ServiceLocator.Current.GetInstance<CommonModuleViewModel>();
 
         public DataAnalyserViewModel AnalyserModule => ServiceLocator.Current.GetInstance<DataAnalyserViewModel>();
+
+        public BasicPlanDataCreatorViewModel BasicPlanDataModule => ServiceLocator.Current.GetInstance<BasicPlanDataCreatorViewModel>();
 
         public UserDataViewModel UserDataModule
         {

@@ -1,8 +1,5 @@
 ﻿using System.Windows.Controls;
-using GalaSoft.MvvmLight.Messaging;
-using HardTrainingCore.Messages;
 using HardTrainingViewsModel.UserDataModule;
-using Microsoft.Practices.ServiceLocation;
 
 namespace HardTrainingViews.Views.UserDataModule
 {

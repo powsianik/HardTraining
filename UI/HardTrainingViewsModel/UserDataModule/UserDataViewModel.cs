@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using EntityFrameworkDomain.Repository.Interfaces.UserDataModule;
 using GalaSoft.MvvmLight;

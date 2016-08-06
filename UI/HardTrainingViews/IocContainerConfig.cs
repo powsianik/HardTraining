@@ -16,6 +16,7 @@ using HardTrainingViews.Navigation;
 using HardTrainingViewsModel.AnalyserModule;
 using HardTrainingViewsModel.CommonModule;
 using HardTrainingViewsModel.Logger;
+using HardTrainingViewsModel.PlanModule;
 using HardTrainingViewsModel.UserDataModule;
 using Microsoft.Practices.Unity;
 using NLog;
@@ -59,6 +60,8 @@ namespace HardTrainingViews
             this.iocContainer.RegisterType<DataAnalyserViewModel>();
 
             this.iocContainer.RegisterType<CommonModuleViewModel>();
+
+            this.iocContainer.RegisterType<BasicPlanDataCreatorViewModel>();
         }
 
         public IUnityContainer GetPreparingContainer()

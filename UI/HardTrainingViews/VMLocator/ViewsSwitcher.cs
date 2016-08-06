@@ -48,6 +48,9 @@ namespace HardTrainingViews.VMLocator
                 case TypesOfPages.BasicData:
                     ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new BasicPlanDataCreator());
                     break;
+                case TypesOfPages.DaySelection:
+                    ServiceLocator.Current.GetInstance<ISimpleNavigationService>().NavigateTo(new TrainingDaySelector());
+                    break;
             }
         }
 

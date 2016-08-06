@@ -15,7 +15,7 @@ namespace HardTrainingViews.Views
         {
             InitializeComponent();
             Application.Current.MainWindow = this;
-
+            
             Messenger.Default.Send(new OpenViewMessage(TypesOfViews.CommonViewModule, profileId));
         }
 

@@ -5,4 +5,4 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HardTrainingViews.Views.PlanModule.PlanCreator"
         mc:Ignorable="d"
-        Title="PlanCreator" Height="300" Width="300" GotMouseCapture="NavigationWindowGotMouseCapture" />
+        Title="PlanCreator" Height="400" Width="350" GotMouseCapture="NavigationWindowGotMouseCapture" />

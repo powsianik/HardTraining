@@ -2,6 +2,7 @@
 {
     public enum TypesOfPages
     {
-        BasicData
+        BasicData,
+        DaySelection
     }
 }

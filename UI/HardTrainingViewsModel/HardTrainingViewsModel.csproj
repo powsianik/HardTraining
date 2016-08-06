@@ -66,6 +66,8 @@
     <Compile Include="Interfaces\IContainId.cs" />
     <Compile Include="Logger\LoggerViewModel.cs" />
     <Compile Include="Logger\ProfileManagerViewModel.cs" />
+    <Compile Include="PlanModule\BasicPlanDataCreatorViewModel.cs" />
+    <Compile Include="PlanModule\DataForViewModel\TrainingPlanData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDataModule\UserDataViewModel.cs" />
   </ItemGroup>
@@ -97,9 +99,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PlanModule\PlanCreator\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
