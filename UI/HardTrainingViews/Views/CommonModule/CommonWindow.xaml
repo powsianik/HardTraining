@@ -23,6 +23,7 @@
                 </Menu.Background>
                 <MenuItem Header="Moduły">
                     <MenuItem Header="Dane użytkownika" Command="{Binding ShowUserDataCommand}"></MenuItem>
+                    <MenuItem Header="Utwórz plan treningowy" Command="{Binding ShowPlanCreatorCommand}"></MenuItem>
                 </MenuItem>
             </Menu>
         </DockPanel>

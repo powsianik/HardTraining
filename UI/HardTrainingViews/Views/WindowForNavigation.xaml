@@ -5,5 +5,4 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HardTrainingViews.Views"
         mc:Ignorable="d"
-        Title="WindowForNavigation" Height="600" Width="800">
-</NavigationWindow>
+        Title="WindowForNavigation" Height="600" Width="800" GotMouseCapture="NavigationWindowGotMouseCapture"/>

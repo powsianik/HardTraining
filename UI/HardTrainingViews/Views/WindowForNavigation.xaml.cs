@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Navigation;
 using GalaSoft.MvvmLight.Messaging;
 using HardTrainingCore.Enums;
@@ -15,11 +14,14 @@ namespace HardTrainingViews.Views
         public WindowForNavigation(short profileId)
         {
             InitializeComponent();
-
             Application.Current.MainWindow = this;
 
             Messenger.Default.Send(new OpenViewMessage(TypesOfViews.CommonViewModule, profileId));
         }
 
+        private void NavigationWindowGotMouseCapture(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            Application.Current.MainWindow = this;
+        }
     }
 }

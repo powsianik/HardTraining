@@ -44,9 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Enums\TypesOfWindow.cs" />
+    <Compile Include="Enums\ViewsForPlanCreator\TypesOfPages.cs" />
     <Compile Include="Messages\BackToRecentViewMessage.cs" />
+    <Compile Include="Messages\OpenViewInPlanCreatorMessage.cs" />
     <Compile Include="Messages\OpenViewMessage.cs" />
     <Compile Include="Enums\TypesOfViews.cs" />
+    <Compile Include="Messages\CreateWindowMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

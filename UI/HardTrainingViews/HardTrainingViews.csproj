@@ -159,8 +159,8 @@
     <Compile Include="Views\LoggerModule\UserControls\ProfileOperationsAssistant.xaml.cs">
       <DependentUpon>ProfileOperationsAssistant.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PlanModule\PlanCreator\NavigatorWindow.xaml.cs">
-      <DependentUpon>NavigatorWindow.xaml</DependentUpon>
+    <Compile Include="Views\PlanModule\PlanCreator\PlanNavigatorWindow.xaml.cs">
+      <DependentUpon>PlanNavigatorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PlanModule\PlanCreator\Pages\BasicPlanDataCreator.xaml.cs">
       <DependentUpon>BasicPlanDataCreator.xaml</DependentUpon>
@@ -178,6 +178,7 @@
       <DependentUpon>ExerciseCreator.xaml</DependentUpon>
     </Compile>
     <Compile Include="VMLocator\ViewsSwitcher.cs" />
+    <Compile Include="VMLocator\WindowCreatorByMessage.cs" />
     <Page Include="Resources\Core.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -231,7 +232,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\PlanModule\PlanCreator\NavigatorWindow.xaml">
+    <Page Include="Views\PlanModule\PlanCreator\PlanNavigatorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

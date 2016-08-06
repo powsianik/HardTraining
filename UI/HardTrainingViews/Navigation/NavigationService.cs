@@ -35,6 +35,11 @@ namespace HardTrainingViews.Navigation
             }
         }
 
+        public void SetNavigationWindow(NavigationWindow window)
+        {
+            this.navigationWindow = window;
+        }
+
         private bool CheckIfExistNavigationWindow()
         {
             if (navigationWindow != null)

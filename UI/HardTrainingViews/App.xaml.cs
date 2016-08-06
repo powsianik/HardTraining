@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Resources;
 using System.Windows;
 using GalaSoft.MvvmLight.Threading;
-using HardTrainingViews.Views;
 using HardTrainingViews.VMLocator;
-using HardTrainingViewsModel.UserDataModule;
-using Microsoft.Practices.ServiceLocation;
+
 
 namespace HardTrainingViews
 {
@@ -15,6 +12,7 @@ namespace HardTrainingViews
     public partial class App : Application
     {
         private static ViewsSwitcher switcher;
+        private static WindowCreatorByMessage windowCreator;
 
         static App()
         {
@@ -25,6 +23,7 @@ namespace HardTrainingViews
             AppDomain.CurrentDomain.SetData("DataDirectory", new Uri(pathToCodeBase).LocalPath);
             
             switcher = new ViewsSwitcher();
+            windowCreator = new WindowCreatorByMessage();
 
             DispatcherHelper.Initialize();
         }

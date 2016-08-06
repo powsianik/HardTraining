@@ -1,9 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-using GalaSoft.MvvmLight.Messaging;
-using GalaSoft.MvvmLight.Views;
-using HardTrainingViews.VMLocator;
-using HardTrainingCore.Messages;
+﻿using System.Windows.Controls;
 using HardTrainingViewsModel.CommonModule;
 
 
