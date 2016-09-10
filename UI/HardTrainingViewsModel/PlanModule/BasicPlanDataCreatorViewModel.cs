@@ -11,26 +11,23 @@ namespace HardTrainingViewsModel.PlanModule
 {
     public class BasicPlanDataCreatorViewModel : ViewModelBase, IContainId
     {
-        public short IdOfProfile { private get; set; }
-        public TrainingPlanData PlanData;
         private IMessenger messenger;
 
         public BasicPlanDataCreatorViewModel()
         {
+            this.PlanData = new TrainingPlanData();
             this.InjectMessenger(MessengerInstance);
-            this.SaveAndGoNextCommand = new RelayCommand(this.SaveAndGoNext);
+            this.SaveAndGoNextCommand = new RelayCommand(this.SaveAndGoNext);       
         }
+
+        public short IdOfProfile { private get; set; }
+        public TrainingPlanData PlanData { get; set; }
 
         public ICommand SaveAndGoNextCommand { get; private set; }
 
         public void InjectMessenger(IMessenger messenger)
         {
             this.messenger = messenger;
-        }
-
-        public void SetBasicData()
-        {
-            this.PlanData =  new TrainingPlanData();
         }
 
         private void SaveAndGoNext()

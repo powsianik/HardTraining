@@ -16,12 +16,12 @@ namespace HardTraiingViewsModelTests.PlanModuleTests
             this.sut = new BasicPlanDataCreatorViewModel();
             this.mockMessenger = new Mock<IMessenger>();
             this.sut.InjectMessenger(mockMessenger.Object);
-        }
+        }    
 
         [Fact]
         public void SetBasicData_WhenCorrectDataInViewModel_SaveDataToPlanData()
         {
-            sut.SetBasicData();
+            sut.SaveAndGoNextCommand.Execute(null);
 
             Assert.NotNull(sut.PlanData);
         }

@@ -23,10 +23,10 @@
             <Label Margin="0,10" ToolTip="Od kiedy zaczynasz ćwiczyć.">Data rozpoczęcia</Label>
             <Label Margin="0,10" ToolTip="Pozwoli na określenie czasu trwania planu.">Planowana data zakończenia</Label>
         </StackPanel>
-        <TextBox x:Name="textBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox_Copy" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5,113,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="5,161,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="5,208,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Dalej" Grid.Column="1" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Width="112" Command="{Binding SaveAndGoNextCommand}"/>
+        <TextBox x:Name="tbxName" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PlanData.NameOfPlan}"/>
+        <TextBox x:Name="tbxAim" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="5,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding PlanData.AimOfPlan}"/>
+        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="5,161,0,0" VerticalAlignment="Top" Width="120" SelectedDate="{Binding PlanData.DateOfBegin}"/>
+        <DatePicker Grid.Column="1" HorizontalAlignment="Left" Margin="5,208,0,0" VerticalAlignment="Top" Width="120" SelectedDate="{Binding PlanData.DateOfEnd}"/>
+        <Button x:Name="btnNext" Content="Dalej" Grid.Column="1" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Width="112" Command="{Binding SaveAndGoNextCommand}"/>
     </Grid>
 </Page>

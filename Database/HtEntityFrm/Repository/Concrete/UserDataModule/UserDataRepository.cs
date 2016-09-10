@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using EntityFrameworkDomain.Context.Interfaces;
 using EntityFrameworkDomain.Repository.Interfaces.UserDataModule;
 using HardTrainingPoco.POCO.UserDataModule;

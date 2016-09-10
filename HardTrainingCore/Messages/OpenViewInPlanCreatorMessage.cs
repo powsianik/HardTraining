@@ -4,7 +4,7 @@ namespace HardTrainingCore.Messages
 {
     public class OpenViewInPlanCreatorMessage
     {
-        public OpenViewInPlanCreatorMessage(TypesOfPages typeOfPage, short profileId = 0)
+        public OpenViewInPlanCreatorMessage(TypesOfPages typeOfPage, short profileId = 0, object data = null)
         {
             this.TypesOfPage = typeOfPage;
             this.ProfileId = profileId;
